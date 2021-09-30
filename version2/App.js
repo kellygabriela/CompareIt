@@ -22,9 +22,23 @@ class App extends React.Component{
                         <nav>
                             <ul id="MenuItems" class="MenuItems">
                                 <li><a href="http://www.google.com">Home</a></li>
-                                <li><a href="http://www.google.com">Products</a></li>
-                                <li><a href="http://www.google.com">About</a></li>
-                                <li><a href="http://www.google.com">Contacts</a></li>
+                                <div class="dropdown">
+                                  <li class="dropbtn">Products</li>
+                                  <div class="dropdown-content">
+                                    <a href="http://www.google.com">baju kali</a>
+                                    <a href="http://www.google.com">spatu kali</a>
+                                    <a href="http://www.google.com">kaos kali</a>
+                                  </div>
+                                </div>
+                                <div class="dropdown2">
+                                    <li class="dropbtn2">About</li>
+                                    <div class="dropdown-content2">
+                                        <a href="http://www.google.com">nama</a>
+                                        <a href="http://www.google.com">owner</a>
+                                  </div>
+                                </div>
+                                <li><a href="http://www.google.com">Contacts</a></li> 
+                            
                             </ul>
                         </nav>
                         <img src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png" width="30px" height="30px" alt=" " />
@@ -181,8 +195,8 @@ class App extends React.Component{
                             <h3>Download Our App</h3>
                             <p>Download App for android and ios mobile phone</p>
                             <div class="app-logo">
-                                <img src="https://www.kindpng.com/picc/m/116-1160492_google-play-white-png-transparent-png.png" alt=" "/>
-                                <img src="https://www.seekpng.com/png/detail/235-2356674_download-on-app-store-png-app-store-logo.png" alt="app store"/> 
+                                <img src="http://assets.stickpng.com/thumbs/5a902dbf7f96951c82922875.png" alt="google play"/>
+                                <img src="http://assets.stickpng.com/thumbs/5a902db97f96951c82922874.png" alt="app store"/>
                             </div>
                         </div>
                         <div class="footer-col-2">
