@@ -12,8 +12,7 @@
 .navbar{
   display: flex;
   align-items: center;
-  padding: 20 px;
-
+  padding: 16px 10px;
 }
 
 nav{
@@ -29,6 +28,16 @@ nav ul{
 nav ul li{
   display: inline-block;
   margin-right: 20 px;
+  padding: 8px 8px;
+}
+
+nav ul li:hover{
+  background-color: #ddd;
+}
+
+.nav-icon { /*shopping cart symbol location*/
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 a{ /* button di atas (home, product, about, contacts) */
@@ -46,6 +55,7 @@ p{
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 20px;
 }
 
 .row{
@@ -60,9 +70,20 @@ p{
   min-width:300px;
 }
 
+.col-2 p, .col-2 h1{
+  width: 370px;
+}
+
+.small {
+  font-size: small;
+}
+
 .col-2 img{ /*  ini buat yang di img kanan */
   max-width: 100%;
   padding: 50px 0;
+  float: right;
+  width: 80%;
+  margin-right: 20px;
 }
 
 .col-2 h1{ /*  ini buat font size yang bold */
@@ -91,6 +112,7 @@ p{
 
 .header  .row{ /*ini turunin tulisan whats on sale ny */
   margin-top: 70px;
+  margin: 0 20px;
 }
 
 .categories{
@@ -98,24 +120,26 @@ p{
 }
 
 .col-3{
-  flex-basis: 30%;
-  min-width: 250px;
+  flex-basis: 32%;
   margin-bottom: 30px;
 }
-/*
-.col-3 img{ /*ini biar ada space antara pictures
+
+.col-3 img{ /*ini biar ada space antara pictures*/
   width: 100%;
 }
+/*
 .small-container{ /*ini to resize the pictures
   max-width: 1080px;
   margin: auto;
-  padding-left: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 0 25px;
+}*/
+
+.small-container {
+  margin: 0 5%;
 }
-*/
+
 .col-4{
-  flex-basis: 25%;
+  flex-basis: 28%;
   padding: 10px;
   min-width: 200px;
   margin-bottom: 50px;
@@ -161,13 +185,19 @@ h4{
 .offer{
  /* background: radial-gradient(#fff, #ffd6d6);*/
   margin-top: 80px;
+  margin-right: 20px;
   padding: 30px 0;
 }
 .col-2 .offer-img{
-  padding: 50px;
+  padding: 50px 10%;
 }
+
 small{
   color: #555;
+}
+
+.col-2 small{
+  width: 10px;
 }
 
 /*ini buat bagian test ny*/
@@ -239,22 +269,14 @@ small{
 .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
   min-width: 250px;
   margin-bottom: 20px;
-}
-.footer-col-1{
-  flex-basis: 30%;
-}
-.footer-col-2{
-  flex: 1;
+  flex-basis: 12%;
   text-align: center;
 }
 .footer-col-2 img{
   width: 180px;
   margin-bottom: 20px;
 }
-.footer-col-3, .footer-col-4{
-  flex-basis: 12%;
-  text-align: center;
-}
+
 ul{
   list-style-type: none;
 }
@@ -262,7 +284,10 @@ ul{
   margin-top: 20px;
 }
 .app-logo img{
-  width: 140px;
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto 5px;
 }
 .footer hr{
   border: none;
@@ -279,51 +304,7 @@ ul{
   display: none;
 }
 
-/*media query for menu*/
-@media only screen and (max-width: 800px){
-  nav ul{
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background: #333;
-    width: 100%;
-    overflow: hidden;
-    transition: max-height 0.5s;
-  }
-
-  nav ul li{
-    display: block;
-    margin-right: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  nav ul li a{
-    color: #fff;
-  }
-
-  .menu-icon{
-    display: block;
-    cursor: pointer;
-  }
-}
-
-/*media query for less than 600 screen size*/
-@media only screen and (max-width: 600px){
-  .row{
-    text-align: center;
-  }
-
-  .col-2, .col-3, .col-4{
-    flex-basis: 100%;
-  }
-}
-
 /*additional, nggak dari video*/
-.float-right{
-  float: right;
-}
-
 .MenuItems {
   max-height: 0px;
 }
@@ -331,8 +312,6 @@ ul{
 .dropbtn {
   /* background-color: #ff524b; 
   color: white; */
-  padding: 16px;
-  font-size: 16px;
   border: none;
 }
 
@@ -340,7 +319,10 @@ ul{
 .dropdown {
   position: relative;
   display: inline-block;
+  transition: max-height 0.5s;
+  border: none;
 }
+
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -350,6 +332,7 @@ ul{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border: 0px;
 }
 
 /* Links inside the dropdown */
@@ -363,55 +346,63 @@ ul{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover, .dropdown:hover .dropbtn {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #ddd;}
+/*media query for menu*/
+@media only screen and (max-width: 800px){
+  nav ul{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
 
-/*--------*/
+  nav ul li{
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li:hover{
+    background-color: #333;
+  }
 
-.dropbtn2 {
-  /* background-color: #ff524b; 
-  color: white; */
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  nav ul li a{
+    color: #fff;
+  }
+  
+  .menu-icon{
+    display: block;
+    cursor: pointer;
+  }
+
+  /*disabling double dropdown for smaller devices (temporary)*/
+  .dropdown{
+    display: block;
+  }
+  .dropdown:hover .dropdown-content{
+    display: none;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #333;
+  }
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown2 {
-  position: relative;
-  display: inline-block;
+/*media query for less than 600 screen size*/
+@media only screen and (max-width: 600px){
+  .row{
+    text-align: center;
+  }
+
+  .col-2, .col-3, .col-4{
+    flex-basis: 100%;
+  }
 }
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content2 {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content2 a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  font-family: 'Roboto Slab', serif;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content2 a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown2:hover .dropdown-content2 {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown2:hover .dropbtn2 {background-color: #ddd;}
