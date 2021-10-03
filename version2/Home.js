@@ -14,7 +14,7 @@ class Home extends React.Component{
                     <div class="row">
                         <div class="col-2">
                             <h1> WHATS ON <br />      SALE </h1>
-                            <p> this is rubbish talking please change this when udah mau di kumpul ya.ato pas mau
+                            <p> ini omong kosong tolong d ganti pas udah mau di kumpul ya.ato pas mau
                             di check juga boleh di ganti gitu lala gua gtau mau type apa lagi tapi
                             biar bagus aja kyk tulisanny banyak gitu ok bye. </p>
                             <a href=" " class="btn"> Explore Now &#8594;</a>
