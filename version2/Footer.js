@@ -40,7 +40,7 @@ class Footer extends React.Component{
                         </div>
                     </div>
                     <hr/>
-                    <p class="copyright">Copyright 2020 - CompareIt</p> 
+                    <p class="copyright">Copyright 2021 - CompareIt</p> 
                 </div>
             </div>
             </>
