@@ -55,7 +55,7 @@ p{
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .row{
@@ -70,8 +70,10 @@ p{
   min-width:300px;
 }
 
-.col-2 p, .col-2 h1{
-  width: 370px;
+.col-2 p{ /*ini itu buat yang available now dan tulisan dibawah nike air jordan x dior*/
+  width: 500px;
+  font-size: medium;
+
 }
 
 .small {
@@ -86,12 +88,14 @@ p{
   margin-right: 20px;
 }
 
-.col-2 h1{ /*  ini buat font size yang bold */
-  font-size: 50px;
+.col-2 h1{ /*  ini buat font size yang bold dan buat tulisan nike air jordan x dior*/ 
+  font-size: 4.5em;
   line-height: 60px;
   margin: 25px 0;
+  width: 550px;
+  font-family: 'Poppins', sans-serif;
+  
 }
-
 .btn{
   display: inline-block;
   background: #ff524b;
