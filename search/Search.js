@@ -1,8 +1,6 @@
 import "./App.css"
 
 function Search() {
-    const ItemsList = document.getElementById('ItemsList');
-    const searchBar = document.getElementById('searchBar');
     let hpItems = [];
 
     const loadItems = () => {
@@ -27,6 +25,8 @@ function Search() {
         
     };
 
+    loadItems();
+
     const displayItems = (items) => {
         const htmlString = items
             .map((item) => {
@@ -40,9 +40,9 @@ function Search() {
             `;
         })
         .join('');
-        ItemsList.innerHTML = htmlString;
+        document.getElementById('ItemsList').innerHTML = htmlString;
 
-        window.onload = searchBar.addEventListener('keyup', (e) => {
+        window.onload = document.getElementById('searchBar').addEventListener('keyup', (e) => {
             const searchString = e.target.value.toLowerCase();
 
             const filteredItems = hpItems.filter((item) => {
@@ -54,8 +54,6 @@ function Search() {
             displayItems(filteredItems);
         });
     };
-
-    loadItems();
 
     return null;
 }
