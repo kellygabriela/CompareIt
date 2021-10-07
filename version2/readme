@@ -16,7 +16,7 @@ Features: //to be reused between pages
 2. Footer.js
 3. Featured.js
 4. Search.js //search function only, without search bar
-    --> designed by search.css  !!not app.css!!
+    --> designed by Search.css  !!not App.css!!
 
 !!notice!!
 make sure to install react-router-dom
