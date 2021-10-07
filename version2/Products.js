@@ -2,6 +2,7 @@ import React from 'react';
 import "./App.css";
 import Footer from './Footer';
 import NavBar from './NavBar';
+import Search from './Search';
 
 class Products extends React.Component{
     render(){
@@ -23,6 +24,21 @@ class Products extends React.Component{
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container-s">
+                <h1 class="titleMain">&#x2728; Car Factory &#x2728;</h1>
+                <div id="searchWrapper">
+                    <input
+                        type="text"
+                        name="searchBar"
+                        id="searchBar"
+                        placeholder="search here"
+                    />
+                </div>
+                <ul id="ItemsList"></ul>
+                <script>
+                    <Search />
+                </script>
             </div>
             <Footer />
             </>
