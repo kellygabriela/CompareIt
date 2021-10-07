@@ -26,13 +26,13 @@ class Products extends React.Component{
                 </div>
             </div>
             <div class="container-s">
-                <h1 class="titleMain">&#x2728; Car Factory &#x2728;</h1>
+                <h1 class="titleMain">What are you searching?</h1>
                 <div id="searchWrapper">
                     <input
                         type="text"
                         name="searchBar"
                         id="searchBar"
-                        placeholder="search here"
+                        placeholder="Search here"
                     />
                 </div>
                 <ul id="ItemsList"></ul>
