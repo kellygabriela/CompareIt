@@ -38,6 +38,9 @@ class NavBar extends React.Component{
                             </div>
                         </div>
                         <li><Link to="/contacts">Contacts</Link></li>
+            //new
+                        <li><Link to="/login">Login</Link></li>
+            //smpe sini
                     </ul>
                 </nav>
                 <img src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png" class="nav-icon" width="30px" height="30px" alt=" " />
