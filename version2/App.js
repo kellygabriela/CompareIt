@@ -16,7 +16,7 @@ function App(){
             <Route exact path="/products" component={Products} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contacts" component={Contacts} />
-            /*new*/
+            {/*new*/}
             <Route exact path="/login" component={Login} />
         </>
     );
