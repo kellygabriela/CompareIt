@@ -9,12 +9,12 @@ class Footer extends React.Component{
                 <div class="container">
                     <div class="row">
                         <div class="footer-col-1">
-                            <h3>Download Our App</h3>
+                     {/* <h3>Download Our App</h3>
                             <p>Download App for android and ios mobile phone</p>
                             <div class="app-logo">
                                 <img src="https://www.kindpng.com/picc/m/116-1160492_google-play-white-png-transparent-png.png" alt="play store"/>
                                 <img src="https://www.seekpng.com/png/detail/235-2356674_download-on-app-store-png-app-store-logo.png" alt="app store"/> 
-                            </div>
+                            </div> */}
                         </div>
                         <div class="footer-col-2">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Fila_logo.svg/2560px-Fila_logo.svg.png" alt=" "/> {/*harusnya logo compare it*/}
