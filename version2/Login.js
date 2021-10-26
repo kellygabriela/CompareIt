@@ -1,6 +1,8 @@
 import React from 'react';
-import "./App.css";
-import "./Login.css";
+import "./component/App.css";
+import isLoggedIn from './component/isLoggedIn';
+import userStore from './userStore';
+
 
 class Login extends React.Component {
     loginfunction = () => {
@@ -9,13 +11,13 @@ class Login extends React.Component {
         const username = loginForm.username.value;
         const password = loginForm.password.value;
         console.log("sumbit clicked")
-    
-        if (username === "guest" && password === "guest") {
+        
+        if (username === "guest") {
             alert("You have successfully logged in.");
-            return this.props.history.push('/')
+            return this.props.history.push('/');
         } else {
             alert("Invalid username and/or password");
-            document.getElementById("login-form").reset()
+            document.getElementById("login-form").reset();
         }
     }
 
