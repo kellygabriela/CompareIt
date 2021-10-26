@@ -15,7 +15,7 @@ class NavBar extends React.Component{
     render(){
         return(      
             <div class="navbar">
-                <div class="logo">
+                <div class="app-logo">
                     <Link to="/"><img src="https://www.freepnglogos.com/uploads/shopee-logo/logo-shopee-png-images-download-shopee-1.png" alt=" " width="200px" /></Link>
                 </div>
                 <nav>
@@ -37,14 +37,12 @@ class NavBar extends React.Component{
                                 <a href="http://www.google.com">kaos kali</a>
                             </div>
                         </div>
-                        <li><Link to="/contacts">Contacts</Link></li>
-            //new
-                        <li><Link to="/login">Login</Link></li>
-            //smpe sini
                     </ul>
                 </nav>
-                <img src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png" class="nav-icon" width="30px" height="30px" alt=" " />
+                
+                {/*<img src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png" class="nav-icon" width="30px" height="30px" alt=" " />*/}
                 <img src="https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png" class="menu-icon" onClick={this.menutoggle} alt=" "/>
+                <li class="login-navbar"><Link to="/login">Login</Link></li>
             </div>
         );
     }
