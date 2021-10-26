@@ -1,11 +1,12 @@
 import "./Search.css"
+import "./App.css"
 
 function Search() {
     let hpItems = [];
 
     const loadItems = () => {
       
-            fetch('Data.json', {
+            fetch('ProdData.json', {
                 headers : { 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -22,7 +23,6 @@ function Search() {
                 console.log(hpItems);
                 displayItems(hpItems);
             });
-        
     };
 
     loadItems();
@@ -32,9 +32,9 @@ function Search() {
             .map((item) => {
                 return `
                 <li class="items">
-                    <h2>${item.product}</h2>
-                    <h3>Manufactured by ${item.Manufacturer}</h3>
-                    <p>Price: ${item.price}</p>
+                    <h2>${item.title}</h2>
+                    <h4>Price: ${item.price}</h4>
+                    <a href=${item.link} class="btn">Shop</a>
                     <img src=${item.picture}></img>
                 </li>
             `;
@@ -47,11 +47,12 @@ function Search() {
 
             const filteredItems = hpItems.filter((item) => {
                 return (
-                    item.Manufacturer.toLowerCase().includes(searchString) ||
-                    item.product.toLowerCase().includes(searchString)
+                    item.title.toLowerCase().includes(searchString)
                 );
             });
             displayItems(filteredItems);
+            console.log("length = ");
+            console.log(filteredItems.length);
         });
     };
 
