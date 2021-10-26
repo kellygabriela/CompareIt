@@ -3,6 +3,9 @@ import "./App.css";
 import Featured from './Featured';
 import Footer from './Footer';
 import NavBar from './NavBar';
+import SearchBar from './SearchBar';
+import "./Search.css"
+import ProductList from './ProductList';
 
 class Home extends React.Component{
     render(){
@@ -13,7 +16,7 @@ class Home extends React.Component{
                     <NavBar />
                     <div class="row">
                         <div class="col-2">
-                            <h1> WHATS ON <br />      SALE </h1>
+                            <h1> WHATS ON SALE </h1>
                             <p> ini omong kosong tolong d ganti pas udah mau di kumpul ya.ato pas mau
                             di check juga boleh di ganti gitu lala gua gtau mau type apa lagi tapi
                             biar bagus aja kyk tulisanny banyak gitu ok bye. </p>
@@ -28,19 +31,9 @@ class Home extends React.Component{
             
             <div class="categories">
                 <div class="small-container">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/47922912-39af-49e3-ac43-d11aac1ac7ba/air-jordan-1-mid-shoes-scZZ99.png" class="item-img" alt=" "/>
-                            <a href=" " class="btn"> Shop now &#8594;</a>
-                        </div>
-                        <div class="col-3">
-                            <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b9bc37ba-c4e3-4fdd-b7c5-f62de33cbbe8/air-jordan-1-mid-shoes-N1GfGx.png" class="item-img" alt=" "/>
-                            <a href=" " class="btn"> Shop now &#8594;</a>
-                        </div>
-                        <div class="col-3">
-                            <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/058a81e7-963c-4236-a350-6599ce5d1fec/air-jordan-1-mid-se-shoes-6d14MT.png" class="item-img" alt=" "/>
-                            <a href=" " class="btn"> Shop now &#8594;</a>
-                        </div>
+                    <SearchBar />
+                    <div class="row" id="HomeList">
+                        <ProductList />
                     </div>
                 </div>
             </div>
