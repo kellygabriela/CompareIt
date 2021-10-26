@@ -1,8 +1,5 @@
 import React from 'react';
 import "./App.css";
-//import Footer from './Footer';
-//import NavBar from './NavBar';
-//import Search from './Search';
 
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
