@@ -31,11 +31,11 @@ class NavBar extends React.Component{
                         </div>
                         <div class="dropdown">
                             <li class="dropbtn"><Link to="/about">About</Link></li>
-                            <div class="dropdown-content">
+                        {/*  <div class="dropdown-content">
                                 <a href="http://www.google.com">baju kali</a>
                                 <a href="http://www.google.com">spatu kali</a>
                                 <a href="http://www.google.com">kaos kali</a>
-                            </div>
+                            </div> */}
                         </div>
                     </ul>
                 </nav>
