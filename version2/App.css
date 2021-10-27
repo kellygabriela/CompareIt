@@ -6,13 +6,14 @@
 @import url('https://fonts.google.com/specimen/Roboto+Slab#standard-styles');
 
 .body{
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar{
   display: flex;
   align-items: center;
   padding: 16px 10px;
+
 }
 
 nav{
@@ -34,6 +35,7 @@ nav ul li{
 nav ul li:hover{
   background-color: #ddd;
 }
+
 
 .nav-icon { /*shopping cart symbol location*/
   margin-top: 5px;
@@ -57,7 +59,6 @@ p{
   padding-right: 25px;
   padding-bottom: 40px;
 }
-
 .row{
   display: flex;
   align-items: center;
@@ -84,7 +85,7 @@ p{
   max-width: 100%;
   padding: 50px 0;
   float: right;
-  width: 80%;
+  width: 100%;
   margin-right: 20px;
 }
 
@@ -96,6 +97,7 @@ p{
   font-family: 'Poppins', sans-serif;
   
 }
+
 .btn{
   display: inline-block;
   background: #ff524b;
@@ -109,6 +111,30 @@ p{
 .btn:hover{
   background: #563434; /* ini nyambung sama explore now atas */
 }
+
+.signupbtn{
+  width: 100%;
+  display: inline-block;
+  background: #3a3a3a;
+  color: #fff;
+  padding: 10px 80px;
+  margin: 15px 0px;
+  border-radius: 5px;
+}
+
+.loginbtn{
+  width: 100%;
+  display: inline-block;
+  background: #3a3a3a;
+  color: #fff;
+  padding: 10px 10px;
+  margin: 5px 00px;
+  border-radius: 5px;
+  text-align: center;
+ 
+ 
+}
+
 
 .header{ /*  ini background kalo mau diganti gpp bg yang front page */
   background: radial-gradient(#fff,#ffd6d6);
@@ -171,6 +197,28 @@ p{
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+.productTitle{ /*ni baru buat product page ny*/
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+.productTitle::after{ /*same ni jg baru sama atas*/
+  content: '';
+  background: #47454573;
+  width: 100px;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+h3{
+  color: #555;
+  font-weight: normal;
 }
 h4{
   color: #555;
@@ -327,7 +375,6 @@ ul{
   border: none;
 }
 
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -409,4 +456,15 @@ ul{
   .col-2, .col-3, .col-4{
     flex-basis: 100%;
   }
+  .column{
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color: #ccc;
+  height: 250px;
+  }
+  .column-d{
+    align-content: center;
+    }
 }
+
