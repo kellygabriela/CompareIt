@@ -45,6 +45,8 @@ class Login extends React.Component {
                     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" /> <br/>
                     <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" /> <br/>
                     <button type="submit" value="Login" id="login-form-submit" onClick={this.loginfunction}> Login </button>
+                       <h4> Do not have an account? </h4>
+                    <a href="/signup" class="signupbtn" display ="inline-block"> sign up </a>
                 </label>
             </form>
         </main>
