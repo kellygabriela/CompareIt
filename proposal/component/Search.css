@@ -1,0 +1,96 @@
+  body {
+    font-family: sans-serif;
+    background-color: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  .titleMain {
+    color: #111d4a;
+    margin-bottom: 30px;
+  }
+  
+  .container-s {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  #ItemsList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .items {
+    list-style-type: none;
+    border: 1px solid #111d4a;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas:
+        'product product image image'
+        'brand brand image image'
+        'house house image image';
+    text-align: left;
+    grid-gap: 20px;
+  }
+  
+  .items > h2 {
+    grid-area: product;
+    margin-bottom: 0px;
+    padding-top: 8px;
+  }
+  
+  .items > h4 {
+    grid-area: brand;
+    margin-bottom: 0px;
+  }
+  
+  .items > a {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+    max-width: 100px;
+    max-height: 35px;
+    background-color: grey;
+  }
+  
+  .items > img {
+    max-width: 150px;
+    grid-area: image;
+  }
+  
+  #searchBar {
+    width: 100%;
+    height: 38px;
+    border-radius: 15px;
+    border: 1px solid #111d4a;
+    padding: 5px 20px;
+    font-size: 12px;
+  }
+  
+  #searchWrapper {
+    position: relative;
+    padding-bottom: 30px;
+  }
+  
+  #searchWrapper::after {
+    /*content: '🔍';*/
+    position: absolute;
+    top: 7px;
+    right: 15px;
+  }
+
+  @media only screen and (max-width: 600px){
+    #searchBar {
+      width: 75%;
+      align-content: center;
+    }
+  }

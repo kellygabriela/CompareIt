@@ -1,0 +1,475 @@
+*{
+  margin : 0;
+  padding: 0;
+  box-sizing : border-box;
+}
+@import url('https://fonts.google.com/specimen/Roboto+Slab#standard-styles');
+
+.body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 16px 10px;
+
+}
+
+nav{
+  flex: 1;
+  text-align: right;
+}
+
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li{
+  display: inline-block;
+  margin-right: 20 px;
+  padding: 8px 8px;
+}
+
+nav ul li:hover{
+  background-color: #ddd;
+}
+
+
+.nav-icon { /*shopping cart symbol location*/
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+a{ /* button di atas (home, product, about, contacts) */
+  text-decoration: none;
+  color: #000000;
+  margin: 10px;
+}
+
+p{
+  color: #555
+}
+
+.container{
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 40px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+
+.col-2{
+  flex-basis: 50%;
+  min-width:300px;
+}
+
+.col-2 p{ /*ini itu buat yang available now dan tulisan dibawah nike air jordan x dior*/
+  width: 500px;
+  font-size: medium;
+
+}
+
+.small {
+  font-size: small;
+}
+
+.col-2 img{ /*  ini buat yang di img kanan */
+  max-width: 100%;
+  padding: 50px 0;
+  float: right;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.col-2 h1{ /*  ini buat font size yang bold dan buat tulisan nike air jordan x dior*/ 
+  font-size: 4.5em;
+  line-height: 60px;
+  margin: 25px 0;
+  width: 550px;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.btn{
+  display: inline-block;
+  background: #ff524b;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s; /*ini biar keren aja explore now ny */
+}
+
+.btn:hover{
+  background: #563434; /* ini nyambung sama explore now atas */
+}
+
+.signupbtn{
+  padding-bottom: 20px;
+}
+
+.loginbtn{
+  padding-bottom: 20px;
+}
+
+
+.header{ /*  ini background kalo mau diganti gpp bg yang front page */
+  background: radial-gradient(#fff,#ffd6d6);
+}
+
+.header  .row{ /*ini turunin tulisan whats on sale ny */
+  margin-top: 70px;
+  margin: 0 20px;
+}
+
+.categories{
+  margin: 70px 0;
+}
+
+.col-3{
+  flex-basis: 32%;
+  margin-bottom: 30px;
+}
+
+.col-3 img{ /*ini biar ada space antara pictures*/
+  width: 100%;
+}
+/*
+.small-container{ /*ini to resize the pictures
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 25px;
+}*/
+
+.small-container {
+  margin: 0 5%;
+}
+
+.col-4{
+  flex-basis: 28%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+.col-4 img{
+  width: 100%;
+}
+
+.title{ /* gatau ini kenapa gabisa :( tapi ini biar featured products ny ditengah gitu*/
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+.title::after{ /*ini merah di bawah featured product gausa jg gpp*/
+  content: '';
+  background: #ff523b;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.productTitle{ /*ni baru buat product page ny*/
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+.productTitle::after{ /*same ni jg baru sama atas*/
+  content: '';
+  background: #47454573;
+  width: 100px;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+h3{
+  color: #555;
+  font-weight: normal;
+}
+h4{
+  color: #555;
+  font-weight: normal;
+}
+.col-4 p{
+  font-size: 14px;
+}
+.rating .fa{
+  color: #ff523b;
+}
+.col-4:hover{
+  transform: translateY(-5px);
+}
+/* ini buat bagian offer ny y*/
+.offer{
+ /* background: radial-gradient(#fff, #ffd6d6);*/
+  margin-top: 80px;
+  margin-right: 20px;
+  padding: 30px 0;
+}
+.col-2 .offer-img{
+  padding: 50px 10%;
+}
+
+small{
+  color: #555;
+}
+
+.col-2 small{
+  width: 10px;
+}
+
+/*ini buat bagian test ny*/
+
+.testimonial{
+  padding-top: 100px;
+}
+.testimonial .col-3{
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.testimonial .col-3 img{
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+.testimonial .col-3:hover{
+  transform: translateY(-10px);
+}
+/* ini ganti kyk font size dan isi2 yang di box testi ny*/
+.fa.fa-quote-left{
+  font-size: 34px;
+  color: #ff523b;
+}
+.col-3 p{
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+.testimonial .col-3 h3{
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
+
+/* brand logo size and hover color*/
+.brands{
+  margin: 100px auto;
+}
+.col-5{
+  width: 160px;
+}
+.col-5 img{
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.col-5 img:hover{
+  filter:grayscale(0);
+}
+
+/*footer*/
+.footer{
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+}
+.footer p{
+  color: #8a8a8a;
+}
+.footer h3{
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+  flex-basis: 12%;
+  text-align: center;
+}
+.footer-col-2 img{
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+ul{
+  list-style-type: none;
+}
+.app-logo{
+  margin-top: 20px;
+}
+.app-logo img{
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  margin: auto 5px;
+}
+.footer hr{
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
+}
+.copyright{
+  text-align: center;
+}
+.menu-icon{
+  width: 28px;
+  margin-left: 20px;
+  display: none;
+}
+
+/*additional, nggak dari video*/
+.MenuItems {
+  max-height: 0px;
+}
+
+.dropbtn {
+  /* background-color: #ff524b; 
+  color: white; */
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transition: max-height 0.5s;
+  border: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border: 0px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover, .dropdown:hover .dropbtn {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/*login option in nav bar*/
+.login-navbar {
+  list-style: none;
+  padding-left: 2%;
+  font-family: 'Poppins';
+  font-size: medium;
+  font-style: oblique;
+}
+
+/*media query for menu*/
+@media only screen and (max-width: 800px){
+  nav ul{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+
+  nav ul li{
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li:hover{
+    background-color: #333;
+  }
+
+  nav ul li a{
+    color: #fff;
+  }
+  
+  .menu-icon{
+    display: block;
+    cursor: pointer;
+  }
+
+  .dropdown{
+    display: block;
+  }
+  .dropdown:hover .dropdown-content{
+    display: none;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #333;
+  }
+}
+
+/*media query for less than 600 screen size*/
+@media only screen and (max-width: 600px){
+  .row{
+    text-align: center;
+  }
+
+  .col-2 h1{ /*  ini buat font size yang bold */
+    font-size: 250%;
+    line-height: 60px;
+    margin: 25px 0;
+    max-width: 400px;
+  }
+
+  .col-2 p {
+    max-width: 400px;
+  }
+
+  .col-2 img{
+    display: none;
+  }
+
+  .col-2{
+    padding-bottom: 3%;
+  }
+  
+  .col-3, .col-4 {
+    flex-basis: 45%;
+  }
+
+  .col-3 img {
+    margin-bottom: -10%;
+  }
+}
