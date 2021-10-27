@@ -12,11 +12,20 @@ class Login extends React.Component {
         const password = loginForm.password.value;
         console.log("sumbit clicked")
         
-        if (username === "guest") {
+       if (username === "guest" && password === "guest") {
             alert("You have successfully logged in.");
             return this.props.history.push('/');
+        } else if (username === "guest") { 
+            document.querySelector( "#password-field").setCustomValidity( "Password is invalid" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
+        } else if (password === "guest") {
+            document.querySelector( "#username-field" ).setCustomValidity( "Username is invalid" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
         } else {
-            alert("Invalid username and/or password");
+            document.querySelector( "button" ).setCustomValidity( "Username and or password is invalid" );
+            document.querySelector( "form" ).reportValidity();
             document.getElementById("login-form").reset();
         }
     }
