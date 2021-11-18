@@ -11,14 +11,28 @@ class Signup extends React.Component {
     
         const username = loginForm.username.value;
         const password = loginForm.password.value;
-        console.log("sumbit clicked")
+        const email = loginForm.email.value;
+        const retypepassword = loginForm.retypepassword.value;
         
-        if (username === "guest") {
-            alert("You have successfully logged in.");
-            return this.props.history.push('/');
-        } else {
-            alert("Invalid username and/or password");
+        if ( email === "") {
+            document.querySelector( "#email-field").setCustomValidity( "Please fill in this field" );
+            document.querySelector( "form" ).reportValidity();
             document.getElementById("login-form").reset();
+        } else if (username === "") {
+            document.querySelector( "#username-field").setCustomValidity( "Please fill in this field" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
+        } else if( password === "") {
+            document.querySelector( "#password-field").setCustomValidity( "Please fill in this field" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
+        } else if (retypepassword !== password) {
+            document.querySelector( "#retypepassword-field").setCustomValidity( "Password is not the same" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
+        } else {
+            alert("You have successfully register your account.");
+            return this.props.history.push('/Login');
         }
     }
 
@@ -37,10 +51,9 @@ class Signup extends React.Component {
                     <input type="text" name="email" id="email-field" class="login-form-field" placeholder="email" /> <br/>
                     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" /> <br/>
                     <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" /> <br/>
-                    <button type="submit" value="Login" id="login-form-submit" onClick={this.loginfunction}> Sign up </button>
-                    <a href="/login" class="loginbtn" display ="inline-block"> back to login </a>
-                    
-                  
+                    <input type="password" name="retypepassword" id="retypepassword-field" class="login-form-field" placeholder="Confirm Password" /> <br/>
+                    <button type="submit" value="Login" id="login-form-submit" onClick={this.signupfunction}> Sign up </button>
+                    <h4 class="loginbtn"><a href="/login"> back to login </a></h4>
                 </label>
             </form>
         </main>
