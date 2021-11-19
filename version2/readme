@@ -1,15 +1,14 @@
-aku bikin folder baru soalnya letaknya agak beda gtu kawan
+version 2.0 of CompareIt front end design
 
-.js file explanation
-
+file mapping:
 Main:
 1. App.js
 
 Pages:
 1. Home.js
 2. Products.js
-3. Contacts.js
-4. About.js
+3. About.js
+Contact.js(cancelled)
 
 Features: //to be reused between pages
 1. NavBar.js
@@ -17,6 +16,8 @@ Features: //to be reused between pages
 3. Featured.js
 4. Search.js //search function only, without search bar
     --> designed by Search.css  !!not App.css!!
+5. ProductList.js
+6. Signup.js
 
 !!notice!!
 make sure to install react-router-dom
