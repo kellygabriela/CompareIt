@@ -3,7 +3,6 @@ import "./component/App.css";
 import Footer from './component/Footer';
 import NavBar from './component/NavBar';
 import Search from './component/Search';
-import SearchBar from './component/SearchBar';
 
 class Products extends React.Component{
     render(){
@@ -15,11 +14,7 @@ class Products extends React.Component{
                 </div>
             </div>
             <div class="container-s">
-                <SearchBar />
-                <ul id="ItemsList"></ul>
-                <script>
-                    <Search />
-                </script>
+                <Search />
             </div>
             <Footer />
             </>
