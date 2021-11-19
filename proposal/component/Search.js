@@ -5,22 +5,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
 
 //array that hold the product from database
-let dbItems = []
-
-//filter items based on searchBar input (query)
-const filterItems = (dbItems, query) => {
-    if(query === null){
-        return dbItems;
-    }
-
-    return dbItems.filter((item) => {
-        const searchedItem = item.keyword.toLowerCase();
-        return searchedItem.includes(query);
-    })
-}
+let dbItems = [];
 
 //load data from database to dbItems array
-const loadItems = () => {
+function loadItems() {
       
     fetch('ProdData.json', {
         headers : { 
@@ -39,13 +27,17 @@ const loadItems = () => {
         dbItems = myJson;
         console.log(dbItems);
         displayItems(dbItems);
-    });
+        console.log("dbItems printed");
+    })
+
+    console.log("dbItems loaded");
 };
 
 loadItems();
+//console.log("item loaded")
 
 const displayItems = (items) => {
-    items.map((item) => {
+    const htmlString = items.map((item) => {
             return `
             <li class="items">
                 <h2>${item.title}</h2>
@@ -53,16 +45,49 @@ const displayItems = (items) => {
                 <a href=${item.link} class="btn">Shop</a>
                 <img src=${item.picture}></img>
             </li>
-        `;
+        `
     })
     .join('');
+    const text = document.getElementById('ItemsList');
+    text.innerHTML = htmlString;
+    console.log("item displayed")
 };
+
+//filter items based on searchBar input (query)
+const filterItems = (dbItems, query) => {
+    console.log(!query)
+    if(query === null){
+        return dbItems;
+    }
+
+    return dbItems.filter((item) => {
+        const searchedItem = item.keyword.toLowerCase();
+        return searchedItem.includes(query);
+    })
+}
 
 const Search = () => {
     const { search } = window.location;
     const query = new URLSearchParams(search).get('searchBar');
     const [searchQuery, setSearchQuery] = useState(query || '');
-    const filteredItems = filterItems(dbItems, searchQuery);             
+    const filteredItems = filterItems(dbItems, searchQuery); 
+
+    function printItem() {
+        //if document.getElementById("ItemsList") is not yet initialized, to avoid error
+        if(document.getElementById("ItemsList") === null) {
+            filteredItems.map(item => (
+                <li class="items">
+                    <h2>{item.title}</h2>
+                    <h4>Price: {item.price}</h4>
+                    <a href={item.link} class="btn">Shop</a>
+                    <img src={item.picture} alt=" "></img>
+                </li>
+                ));
+        } else {
+            //to replace the previously displayed data according to the new search input
+            return displayItems(filteredItems);
+        }
+    }
 
     return(
         <Router>
@@ -72,14 +97,7 @@ const Search = () => {
                 setSearchQuery={setSearchQuery}
             />
             <ul id="ItemsList">
-                {filteredItems.map(item => (
-                <li class="items">
-                    <h2>{item.title}</h2>
-                    <h4>Price: {item.price}</h4>
-                    <a href={item.link} class="btn">Shop</a>
-                    <img src={item.picture} alt=" "></img>
-                </li>
-                ))}
+                {printItem()}
             </ul>
         </div>
         </Router>
