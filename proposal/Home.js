@@ -17,7 +17,7 @@ class Home extends React.Component{
                         <div class="col-2">
                             <h1> WHATS ON SALE </h1>
                             <p></p>
-                            <Link to="/Products" class="btn"> Explore Now &#8594;</Link>
+                            <Link to="/products" class="btn"> Explore Now &#8594;</Link>
                         </div>
                         <div class="col-2">
                             <img src="https://www.pngkey.com/png/full/115-1157788_jordan-1-retro-high-air-jordan-1-bred.png" alt=" " />
