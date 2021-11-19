@@ -30,6 +30,10 @@ class Signup extends React.Component {
             document.querySelector( "#retypepassword-field").setCustomValidity( "Password is not the same" );
             document.querySelector( "form" ).reportValidity();
             document.getElementById("login-form").reset();
+        } else if (password.length <= 7) {
+            document.querySelector( "#retypepassword-field").setCustomValidity( "Password length must be atleast 8 characters" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
         } else {
             alert("You have successfully register your account.");
             return this.props.history.push('/Login');
