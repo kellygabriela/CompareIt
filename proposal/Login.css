@@ -25,6 +25,17 @@ body {
 #login-header {
     justify-items: left;
     margin-top: 20px;
+    margin-bottom: -10px;
+  
+}
+#signup-header {
+  justify-items: left;
+  margin-top: 20px;
+  margin-bottom: -40px;
+}
+#signup-header {
+    justify-items: left;
+    margin-top: 20px;
 }
 
 #login-error-msg-holder {
@@ -63,16 +74,52 @@ body {
   color: #3a3a3a;
 }
 
+.signup-form-field::placeholder {
+  color: #3a3a3a;
+}
+
 .login-form-field {
   border: none;
   border-bottom: 1px solid #3a3a3a;
   margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 50px 20px 20px;
 }
 
 #login-form-submit {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 20px;
+}
+#signup-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.signup-field::placeholder {
+  color: #3a3a3a;
+}
+
+.signup-field {
+  border: none;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+  padding: 20px 80px 15px 10px;
+}
+
+#signup-form-submit {
   width: 100%;
   padding: 15px;
   border: none;
