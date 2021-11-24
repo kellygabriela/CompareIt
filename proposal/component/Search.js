@@ -19,7 +19,7 @@ function loadItems() {
 
     .then(function(response){
         console.log(response);
-        console.log("");
+        console.log("search.js response");
         return response.json();
     })
 
@@ -33,7 +33,6 @@ function loadItems() {
     console.log("dbItems loaded");
 };
 
-loadItems();
 //console.log("item loaded")
 
 const displayItems = (items) => {
@@ -55,7 +54,7 @@ const displayItems = (items) => {
 
 //filter items based on searchBar input (query)
 const filterItems = (dbItems, query) => {
-    console.log(!query)
+    console.log("query = "+!query)
     if(query === null){
         return dbItems;
     }
@@ -71,6 +70,8 @@ const Search = () => {
     const query = new URLSearchParams(search).get('searchBar');
     const [searchQuery, setSearchQuery] = useState(query || '');
     const filteredItems = filterItems(dbItems, searchQuery); 
+
+    loadItems();
 
     function printItem() {
         //if document.getElementById("ItemsList") is not yet initialized, to avoid error
@@ -88,7 +89,6 @@ const Search = () => {
             return displayItems(filteredItems);
         }
     }
-
     return(
         <Router>
         <div>
