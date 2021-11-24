@@ -13,7 +13,8 @@
   display: flex;
   align-items: center;
   padding: 16px 10px;
-
+  margin-bottom: -35px;
+  z-index: 1;
 }
 
 nav{
@@ -59,6 +60,7 @@ p{
   padding-right: 25px;
   padding-bottom: 40px;
 }
+
 .row{
   display: flex;
   align-items: center;
@@ -318,8 +320,9 @@ ul{
   list-style-type: none;
 }
 .app-logo{
-  margin-top: 20px;
+  margin-top: 10px;
 }
+
 .app-logo img{
   width: 120px;
   height: 40px;
@@ -332,9 +335,11 @@ ul{
   height: 1px;
   margin: 20px 0;
 }
+
 .copyright{
   text-align: center;
 }
+
 .menu-icon{
   width: 28px;
   margin-left: 20px;
@@ -344,6 +349,13 @@ ul{
 /*additional, nggak dari video*/
 .MenuItems {
   max-height: 0px;
+  margin-top: -10px;
+}
+
+#dummy-div {
+  height: 0px;
+  transition: height 0.5s;
+  background-color: #fff;
 }
 
 .dropbtn {
