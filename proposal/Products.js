@@ -3,6 +3,7 @@ import "./component/App.css";
 import Footer from './component/Footer';
 import NavBar from './component/NavBar';
 import Search from './component/Search';
+import "./product.css";
 
 class Products extends React.Component{
     render(){
