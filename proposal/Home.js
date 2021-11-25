@@ -13,6 +13,7 @@ class Home extends React.Component{
             <div class="header">
                 <div class="container">
                     <NavBar />
+                    <div id="dummy-div"></div>
                     <div class="row">
                         <div class="col-2">
                             <h1> WHATS ON SALE </h1>
