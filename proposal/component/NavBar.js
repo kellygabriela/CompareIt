@@ -6,10 +6,8 @@ class NavBar extends React.Component{
     menutoggle = () => {
         if (document.getElementById('MenuItems').style.maxHeight === "0px") {
             document.getElementById('MenuItems').style.maxHeight = "200px";
-            document.getElementById('dummy-div').style.height = "130px";
         } else {
             document.getElementById('MenuItems').style.maxHeight = "0px";
-            document.getElementById('dummy-div').style.height = "0px";
         };
     }
 
@@ -24,26 +22,9 @@ class NavBar extends React.Component{
                     <ul id="MenuItems" class="MenuItems" onClick="document.getElementById('MenuItems').style.maxHeight = '0px'">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/products">Products</NavLink></li>
-                        {/*<div class="dropdown">
-                        <li class="dropbtn"></li>
-                            <div class="dropdown-content">
-                                <a href="http://www.google.com">baju kali</a>
-                                <a href="http://www.google.com">spatu kali</a>
-                                <a href="http://www.google.com">kaos kali</a>
-                            </div>
-        </div>*/}
                         <li><NavLink to="/about">About</NavLink></li>
-                        {/*<div class="dropdown">
-                            <li class="dropbtn"></li>
-                            <div class="dropdown-content">
-                                <a href="http://www.google.com">baju kali</a>
-                                <a href="http://www.google.com">spatu kali</a>
-                                <a href="http://www.google.com">kaos kali</a>
-                            </div>
-    </div>*/}
                     </ul>
                 </nav>
-                {/*<img src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png" class="nav-icon" width="30px" height="30px" alt=" " />*/}
                 <img src="phone-menu-icon-navbar.png" class="menu-icon" onClick={this.menutoggle} alt=" "/>
                 <li class="login-navbar"><NavLink to="/Login">Logout</NavLink></li>
             </div>
