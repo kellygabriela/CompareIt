@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 //array that hold the product from database
 let dbItems = [];
+let init = false;
 
 //load data from database to dbItems array
 function loadItems() {
@@ -18,23 +19,22 @@ function loadItems() {
     })
 
     .then(function(response){
+        console.log("search.js response:");
         console.log(response);
-        console.log("search.js response");
+        console.log(" ");
         return response.json();
     })
 
     .then(function(myJson) {
         dbItems = myJson;
+        console.log("dbItems content:");
         console.log(dbItems);
         displayItems(dbItems);
-        console.log("dbItems printed");
     })
-
-    console.log("dbItems loaded");
 };
 
-//console.log("item loaded")
 
+//updating the displayed items based on search
 const displayItems = (items) => {
     const htmlString = items.map((item) => {
             return `
@@ -55,23 +55,28 @@ const displayItems = (items) => {
 //filter items based on searchBar input (query)
 const filterItems = (dbItems, query) => {
     console.log("query = "+!query)
-    if(query === null){
+    if(!query){
         return dbItems;
     }
 
     return dbItems.filter((item) => {
+        console.log("search input: "+query);
         const searchedItem = item.keyword.toLowerCase();
         return searchedItem.includes(query);
     })
 }
 
+//executed when product page is loaded
 const Search = () => {
     const { search } = window.location;
     const query = new URLSearchParams(search).get('searchBar');
-    const [searchQuery, setSearchQuery] = useState(query || '');
+    const [searchQuery, setSearchQuery] = useState(query || " ");
     const filteredItems = filterItems(dbItems, searchQuery); 
 
-    loadItems();
+    if(init === false){
+        loadItems();
+        init = true;
+    }
 
     function printItem() {
         //if document.getElementById("ItemsList") is not yet initialized, to avoid error
@@ -93,7 +98,6 @@ const Search = () => {
         <Router>
         <div>
             <SearchBar 
-                searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
             />
             <ul id="ItemsList">
