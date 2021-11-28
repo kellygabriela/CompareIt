@@ -1,16 +1,30 @@
 import React from "react";
 import "./Search.css";
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
-function SearchBar() {
+const SearchBar = ({ setSearchQuery }) => {
+    const [searchInput, setSearchInput] = useState();
+    const history = useHistory();
+
+    const onSubmit = (e) => { //return to database
+        setSearchQuery(searchInput);
+        history.push(`?=${searchInput}`);
+        e.preventDefault(); 
+    };
+
     return (
-        <div id="searchWrapper">
+        <form action="/" method="get" id="searchWrapper" onSubmit={onSubmit}>
             <input
                 type="text"
                 name="searchBar"
                 id="searchBar"
                 placeholder="what are you looking for..."
+                value={searchInput}
+                onInput={(e) => setSearchInput(e.target.value)}
            />
-        </div>
+           <button type="submit">Search</button>
+        </form>
     )
 }
 

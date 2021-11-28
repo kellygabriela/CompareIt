@@ -70,6 +70,7 @@ body {
   border-radius: 3px;
   outline: none;
   padding: 20px 20px 20px 20px;
+  width:100%;
 }
 
 #login-form-submit {

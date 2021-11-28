@@ -1,8 +1,6 @@
 import React from 'react';
 import "./component/App.css";
 import Featured from './component/Featured';
-import Footer from './component/Footer';
-import NavBar from './component/NavBar';
 import ProductList from './ProductList';
 import { Link } from 'react-router-dom';
 
@@ -10,14 +8,13 @@ class Home extends React.Component{
     render(){
         return(
         <>
-            <div class="header">
+            <div class="home-firstpage"> {/*ini butuh css baru karna sekarang g bisa ikut header */}
                 <div class="container">
-                    <NavBar />
                     <div class="row">
                         <div class="col-2">
                             <h1> WHATS ON SALE </h1>
                             <p></p>
-                            <Link to="/Products" class="btn"> Explore Now &#8594;</Link>
+                            <Link to="/products" class="btn"> Explore Now &#8594;</Link>
                         </div>
                         <div class="col-2">
                             <img src="https://www.pngkey.com/png/full/115-1157788_jordan-1-retro-high-air-jordan-1-bred.png" alt=" " />
@@ -107,9 +104,6 @@ class Home extends React.Component{
                     </div>
                 </div>
             </div>
-
-            {/*footer*/} 
-            <Footer />
         </>
         );
     }

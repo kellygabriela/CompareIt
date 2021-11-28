@@ -1,22 +1,24 @@
 import React from 'react';
 import "./component/App.css";
-import Products from './Products';
 import Home from './Home';
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import About from './About';
-import Contacts from './Contacts';
-import Login from './Login';
-import Signup from './Signup';
+import NavBar from './component/NavBar';
+import Footer from './component/Footer';
+import Search from './component/Search';
 
 function App(){
     return(
         <>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/products" component={Products} />
+        <div class="header">
+        <NavBar />
+        </div>
+        <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/products" component={Search} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/contacts" component={Contacts} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup}/>
+        </Switch>
+        <Footer />
         </>
     );
 }

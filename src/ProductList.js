@@ -13,13 +13,14 @@ function ProductList() {
             })
             .then(function(response){
                 console.log(response);
-                console.log("");
+                console.log("prodlist response");
                 return response.json();
             })
     
             .then(function(myJson) {
                 hpItems = myJson;
                 console.log(hpItems);
+                console.log("hpItems printed");
                 displayItems(hpItems);
             });
     };
