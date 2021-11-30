@@ -1,7 +1,9 @@
 import React from 'react';
 import "./component/App.css";
+import "./OnePic.css";
 import Featured from './component/Featured';
 import ProductList from './ProductList';
+import OnePic from './OnePic';
 import { Link } from 'react-router-dom';
 
 class Home extends React.Component{
@@ -35,18 +37,17 @@ class Home extends React.Component{
             <Featured />
 
             {/*offer*/}
+                <div class= "col-8">
+                    <h2>OUR BEST ITEM</h2>
+                </div>
             <div class="offer">
                 <div class="small-container">
                     <div class="row">
+                        
                         <div class="col-2">
-                            <img src="https://image.goat.com/crop/750/attachments/product_template_additional_pictures/images/037/235/328/original/569208_01.jpg.jpeg?1590685234" class="offer-img" alt=" "/>
-                        </div>
-                        <div class="col-2">
-                            <p> Available now </p>
-                            <h1> Nike Air Jordan X Dior </h1>
-                            <p class="small"> insert kata kata disini tolong insert apapun insert kata kata disini
-                            tolong insert apapun insert kata kata disini tolong insert apapun
-                            insert kata kata disini tolong insert apapun </p>
+                            <div class="row" id="OnepicList">
+                        <OnePic/>
+                         </div>
                         </div>
                     </div>
                 </div>
