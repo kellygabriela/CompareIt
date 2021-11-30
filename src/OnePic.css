@@ -1,0 +1,84 @@
+#OnepicList{
+    display: grid;
+    grid-template-rows: repeat(minmax(320px, 1fr));
+}
+.col-7 h2{
+    font-size: 2.5em;
+    line-height: 60px;
+    margin: 25px 0;
+    width: 550px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 60%;
+}
+
+.col-7 p{
+    font-size: 1.4em;
+    margin-left: 60%;
+}
+
+.col-7 img{
+    width: 70%;
+    margin-right: 70%;
+    margin-bottom: -150%;
+    margin-top: -50%;
+  }
+
+.btn7{
+    margin-left: 59%;
+    display: inline-block;
+    background: #ff524b;
+    color: #fff;
+    padding: 8px 30px;
+    margin-top: 5%;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.col-8 h2{
+    font-size: 3em;
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn7{
+        margin-top: 30%;
+        max-width: fit-content;
+        margin-left: 10%;
+        margin-top: 8%;
+    }
+    .col-7 h2{
+        font-size: 200%;
+        margin: 15px 0 ;
+        max-width: 350px;
+        max-height: 200px;
+        padding-left: 20%;
+        text-align: center;
+        padding-top: -30%;
+        margin-top: -10%;
+        padding-bottom: 65%;
+    }
+    .col-7 p{
+        margin-left: 15%;
+        text-align: center;
+        
+    }
+
+    .col-7{
+        padding-bottom: 3%;
+        flex-basis: 45%;
+    }
+
+    .col-7 .item-img{
+        margin-bottom: -10%;
+        padding-left: 50%;
+        width: 200%;
+        display: block;
+        margin-top: -50%;
+        align-content: center;
+    }
+    .col-8{
+        padding-bottom: -50%;
+    }
+
+}
