@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+   
+}
+
+.about-section {
+    margin-top : 10px;
+    margin-bottom: 10px;
+    background : url(https://freight.cargo.site/t/original/i/a6e19c64065f6dff400cce28f3e6ffe380ea5959f14c6b8515dbf51d67415c62/Widlic_Nike-ASW-4.jpg) no-repeat left;
+    background-size: 65%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 30px;
+
+    
+   
+}
+
+.inner-container {
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+    margin: -60px;
+   
+}
+
+.inner-container h1 {
+    margin: 20px;
+    font-size: 30px;
+    font-weight:800;
+    margin-left: -2px;
+}
+
+.border {
+    height: 3px;
+    width: 100px;
+    background-color: rgb(245,60,28);
+}
+
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.developer-container {
+    margin: 0 5%;
+   
+  }
+.developer-section{
+    margin-top:-30px;
+    margin-bottom: 10px;
+   
+    text-align: center;
+    
+}
+
+.developer2-section{
+    margin-top:10px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+    
+}
+
+@media only screen and (max-width: 600px){
+   
+
+  }
