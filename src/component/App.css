@@ -125,6 +125,8 @@ p{
 
 .header{ /*  ini background kalo mau diganti gpp bg yang front page */
   background: radial-gradient(#fff,#ffd6d6);
+  margin-right: -4.5%;
+  margin-left: -4.5%;
 }
 
 .header  .row{ /*ini turunin tulisan whats on sale ny */
@@ -297,6 +299,8 @@ small{
   color: #8a8a8a;
   font-size: 14px;
   padding: 60px 0 20px;
+  margin-left: -9%;
+  margin-right: -9%;
 }
 .footer p{
   color: #8a8a8a;
@@ -483,5 +487,15 @@ ul{
 
   .col-3 img {
     margin-bottom: -10%;
+  }
+  
+  .header{
+    margin-left: -1%;
+    margin-right: -1%;;
+  }
+
+  .footer{
+    margin-left: -1%;
+    margin-right: -1%;;
   }
 }
