@@ -9,6 +9,7 @@ import Signup from './Signup';
 import text from './component/Text';
 
 ReactDOM.render(
+  <>
   <BrowserRouter>          
   <Switch>
       <Route exact path="/" render={() => (
@@ -17,12 +18,13 @@ ReactDOM.render(
           ) : (
           <Redirect to="/login"/>
       )
-      )}/>
+          )}/>
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup}/>
       <App />
   </Switch>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </>,
   document.getElementById('root')
 );
 

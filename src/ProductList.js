@@ -1,50 +1,29 @@
-import "./component/Search.css"
+import "./component/Search.css";
+import "./component/App.css";
 
-function ProductList() {
-    let hpItems = [];
-
-    const loadItems = () => {
-      
-            fetch('ProdData.json', {
-                headers : { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            })
-            .then(function(response){
-                console.log(response);
-                console.log("prodlist response");
-                return response.json();
-            })
-    
-            .then(function(myJson) {
-                hpItems = myJson;
-                console.log(hpItems);
-                console.log("hpItems printed");
-                displayItems(hpItems);
-            });
-    };
-
-    loadItems();
-
-    const displayItems = (items) => {
-        const htmlString = items
-            .slice(0, 3).map((item) => {
-                console.log("yuhuu")
-                return `
-                <div class="col-3">
-                    <h2>${item.title}</h2>
-                    <p>Price: ${item.price}</p>
-                    <img src=${item.picture} alt=${item.title} class="item-img"></img>
-                    <a href=${item.link} class="btn"> Shop Now &#8594;</a>
-                </div>
-            `;
-        })
-        .join('');
-        document.getElementById('HomeList').innerHTML = htmlString;
-    };
-
-    return null;
+const ProductList = (props) => {
+    const data = props.items;
+   return (
+    <>
+    <div class="categories">
+    <div class="small-container">
+        <div class="row">
+        {data
+        .slice(0, 3).map(item => (
+                <li class="col-3">
+                    <img src={item.picture} alt=" "></img>
+                    <h2>{item.title}</h2>
+                    <h4>Price: {item.price}</h4>
+                    <a href={item.link} class="btn">Shop</a>
+                </li>
+        ))}
+        {console.log("product list printed")}
+        </div>
+    </div>
+    <p>{props.isFetching ? 'Fetching products...' : ''}</p>
+    </div>
+    </>
+   );
 }
 
 export default ProductList;

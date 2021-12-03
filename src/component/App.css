@@ -68,6 +68,10 @@ p{
   justify-content: space-around;
 }
 
+.small {
+  font-size: small;
+}
+
 .col-2{
   flex-basis: 50%;
   min-width:300px;
@@ -76,11 +80,6 @@ p{
 .col-2 p{ /*ini itu buat yang available now dan tulisan dibawah nike air jordan x dior*/
   width: 500px;
   font-size: medium;
-
-}
-
-.small {
-  font-size: small;
 }
 
 .col-2 img{ /*  ini buat yang di img kanan */
@@ -125,12 +124,10 @@ p{
 
 .header{ /*  ini background kalo mau diganti gpp bg yang front page */
   background: radial-gradient(#fff,#ffd6d6);
-  margin-right: -4.5%;
-  margin-left: -4.5%;
 }
 
-.header  .row{ /*ini turunin tulisan whats on sale ny */
-  margin-top: 70px;
+.home-firstpage .row{ /*ini turunin tulisan whats on sale ny */
+  padding-top: 5%;
   margin: 0 20px;
 }
 
@@ -141,16 +138,19 @@ p{
 .col-3{
   flex-basis: 32%;
   margin-bottom: 30px;
+  list-style: none;
 }
 
 .col-3 img{ /*ini biar ada space antara pictures*/
   width: 100%;
 }
+
 /*
 .small-container{ /*ini to resize the pictures
   max-width: 1080px;
   margin: auto;
   padding: 0 25px;
+  background-color: #000;
 }*/
 
 .small-container {
@@ -222,15 +222,21 @@ h4{
 .col-4:hover{
   transform: translateY(-5px);
 }
+
 /* ini buat bagian offer ny y*/
 .offer{
  /* background: radial-gradient(#fff, #ffd6d6);*/
-  margin-top: 80px;
-  margin-right: 20px;
-  padding: 30px 0;
+  margin: 80px 25px 0 0;
+  margin-left: 50px;
 }
+
+.offer h2 {
+ text-align: center;
+}
+
 .col-2 .offer-img{
   padding: 50px 10%;
+  background-color: #000;
 }
 
 small{
@@ -299,8 +305,6 @@ small{
   color: #8a8a8a;
   font-size: 14px;
   padding: 60px 0 20px;
-  margin-left: -9%;
-  margin-right: -9%;
 }
 .footer p{
   color: #8a8a8a;
@@ -462,6 +466,15 @@ ul{
     text-align: center;
   }
 
+  .col-2 {
+    flex-basis: content;
+  }
+
+  .home-firstpage {
+    min-height: 350px;
+    padding-top: 10%;
+  }
+
   .col-2 h1{ /*  ini buat font size yang bold */
     font-size: 250%;
     line-height: 60px;
@@ -483,19 +496,5 @@ ul{
   
   .col-3, .col-4 {
     flex-basis: 45%;
-  }
-
-  .col-3 img {
-    margin-bottom: -10%;
-  }
-  
-  .header{
-    margin-left: -1%;
-    margin-right: -1%;;
-  }
-
-  .footer{
-    margin-left: -1%;
-    margin-right: -1%;;
   }
 }

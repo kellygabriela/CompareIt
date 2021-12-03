@@ -8,6 +8,7 @@ const SearchBar = ({ setSearchQuery }) => {
     const history = useHistory();
 
     const onSubmit = (e) => { //return to database
+        console.log(searchInput);
         setSearchQuery(searchInput);
         history.push(`?=${searchInput}`);
         e.preventDefault(); 

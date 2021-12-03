@@ -3,8 +3,8 @@ import "./App.css";
 import {Link} from "react-router-dom";
 import text from './Text';
 
-class NavBar extends React.Component {
-    menutoggle = () => {
+const NavBar = (props) => {
+    const menutoggle = () => {
         if (document.getElementById('MenuItems').style.maxHeight === "0px") {
             document.getElementById('MenuItems').style.maxHeight = "200px";
             document.getElementById('dummy-div').style.height = "130px";
@@ -14,14 +14,13 @@ class NavBar extends React.Component {
         };
     }
 
-    updateStat() {
+    function updateStat() {
         if(text.value === "Logout") {
             text.value = "Login";
         }
     }
 
-    render() {
-    //this.checkStat()
+    //render() {
     return(   
         <>   
         {console.log(text.value)}
@@ -38,14 +37,14 @@ class NavBar extends React.Component {
                             <li><Link to="/about">About</Link></li>
                         </ul>
                     </nav>
-                    <img src="phone-menu-icon-navbar.png" class="menu-icon" onClick={this.menutoggle} alt=" "/>
-                    <Link id="login_out" onClick={this.updateStat} to="/login">{text.value}</Link>
+                    <img src="phone-menu-icon-navbar.png" class="menu-icon" onClick={menutoggle} alt=" "/>
+                    <Link id="login_out" onClick={updateStat} to="/login">{text.value}</Link>
                 </div>
             </div>
             <div id="dummy-div"></div>
         </div>
         </>
     );
-}}  
+}//}  
 
 export default NavBar;

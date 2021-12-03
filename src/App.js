@@ -1,26 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./component/App.css";
 import Home from './Home';
-import {Route, Switch} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 import About from './About';
 import NavBar from './component/NavBar';
 import Footer from './component/Footer';
 import Search from './component/Search';
+import axios from 'axios';
 
-function App(){
+function App() {
+    const [dbData, setdbData] = useState({items: [], isFetching: false});
+
+    console.log("boo");
+    useEffect(() => {
+        const loadItems = async () => {    
+                setdbData({items: dbData.items, isFetching: true});
+                const response = await axios.get('ProdData.json');
+                console.log("fetch response1: ");
+                console.log(response.data);
+                setdbData({items: response.data, isFetching: false});
+        };
+        loadItems();
+        console.log("loadItems successful");
+        console.log("fetch response: ");
+        console.log(dbData.items);
+    }, []);
+
     return(
         <>
         <div class="header">
-        <NavBar />
+        <NavBar items={dbData.items}/>
         </div>
+        <Router>
         <Switch>
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/products" component={Search} />
-            <Route exact path="/about" component={About} />
+                <Route exact path="/home"> 
+                    <Home 
+                        items={dbData.items}
+                        isFetching={dbData.isFetching} />
+                </Route>
+                <Route exact path="/products">
+                    <Search 
+                        items={dbData.items}
+                        isFetching={dbData.isFetching} />
+                </Route>
+                <Route exact path="/about" component={About} />
         </Switch>
+        </Router>
         <Footer />
         </>
-    );
+    ) 
 }
 
 export default App;
