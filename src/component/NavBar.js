@@ -28,7 +28,7 @@ const NavBar = () => {
     //render() {
     return(   
         <>   
-        <div class="header" id="header">
+        <div class="header">
             <div class="container">
                 <div class="navbar">
                     <div class="app-logo">

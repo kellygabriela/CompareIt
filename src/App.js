@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "./component/App.css";
 import Home from './Home';
 import {Switch, Route, Redirect} from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
 import About from './About';
 import NavBar from './component/NavBar';
 import Footer from './component/Footer';
@@ -10,8 +9,6 @@ import Search from './component/Search';
 import axios from 'axios';
 import Login from './Login';
 import Signup from './Signup';
-import text from './component/Text';
-import Main from './Main';
 
 function App() {
     const [user, setUser] = useState();

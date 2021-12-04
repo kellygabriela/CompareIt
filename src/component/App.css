@@ -126,10 +126,6 @@ p{
   background: radial-gradient(#fff,#ffd6d6);
 }
 
-#header {
-  max-height: fit-content;
-}
-
 .home-firstpage .row{ /*ini turunin tulisan whats on sale ny */
   padding-top: 5%;
   margin: 0 20px;
