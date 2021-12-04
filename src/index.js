@@ -3,26 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Route, Redirect, Switch, BrowserRouter} from 'react-router-dom';
-import Login from './Login';
-import Signup from './Signup';
-import text from './component/Text';
+import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
   <>
   <BrowserRouter>          
-  <Switch>
-      <Route exact path="/" render={() => (
-          (text.value !== "Login") ? (
-          <Redirect to="/home"/>
-          ) : (
-          <Redirect to="/login"/>
-      )
-          )}/>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup}/>
-      <App />
-  </Switch>
+    <App />
   </BrowserRouter>
   </>,
   document.getElementById('root')

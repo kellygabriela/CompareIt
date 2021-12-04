@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./App.css";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import text from './Text';
 
-const NavBar = (props) => {
+const NavBar = () => {
+    const [texts, setTexts] = useState("");
+    const loggedInUser = (localStorage.getItem("status") !== null);
+
+    useEffect(() => {
+        if(loggedInUser) { //is not null
+            return setTexts("Logout");
+        } else {
+            return setTexts("Login");
+        }
+    }, [])
+
     const menutoggle = () => {
         if (document.getElementById('MenuItems').style.maxHeight === "0px") {
             document.getElementById('MenuItems').style.maxHeight = "200px";
@@ -14,17 +25,10 @@ const NavBar = (props) => {
         };
     }
 
-    function updateStat() {
-        if(text.value === "Logout") {
-            text.value = "Login";
-        }
-    }
-
     //render() {
     return(   
         <>   
-        {console.log(text.value)}
-        <div class="header">
+        <div class="header" id="header">
             <div class="container">
                 <div class="navbar">
                     <div class="app-logo">
@@ -38,7 +42,8 @@ const NavBar = (props) => {
                         </ul>
                     </nav>
                     <img src="phone-menu-icon-navbar.png" class="menu-icon" onClick={menutoggle} alt=" "/>
-                    <Link id="login_out" onClick={updateStat} to="/login">{text.value}</Link>
+                    {console.log(texts)}
+                    <Link id="login_out" to="/logout">{texts}</Link>
                 </div>
             </div>
             <div id="dummy-div"></div>

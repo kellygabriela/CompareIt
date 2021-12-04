@@ -1,18 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import "./component/App.css";
 import Home from './Home';
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 import About from './About';
 import NavBar from './component/NavBar';
 import Footer from './component/Footer';
 import Search from './component/Search';
 import axios from 'axios';
+import Login from './Login';
+import Signup from './Signup';
+import text from './component/Text';
+import Main from './Main';
 
 function App() {
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        //localStorage.clear()
+        const loggedInUser = localStorage.getItem("user");
+        if (loggedInUser) {
+            setUser(loggedInUser);
+        }
+    }, []);
+
     const [dbData, setdbData] = useState({items: [], isFetching: false});
 
-    console.log("boo");
     useEffect(() => {
         const loadItems = async () => {    
                 setdbData({items: dbData.items, isFetching: true});
@@ -23,33 +36,101 @@ function App() {
         };
         loadItems();
         console.log("loadItems successful");
-        console.log("fetch response: ");
-        console.log(dbData.items);
     }, []);
+
+    const temp = (localStorage.getItem("status")!== null);
+    const [loggedin, setLoggedIn] = useState({val: temp});
+
+    console.log("storage:");
+    console.log(localStorage.getItem("user") !== null);
+    console.log(localStorage.getItem("status")!== null);
+
+    if(loggedin.val) {
+        return(
+            <>
+            <NavBar />
+            <Switch>
+                {loggedin.val && (
+                    <Redirect from="/login" to="/home" exact />
+                )}
+
+                {loggedin.val && (
+                    <Redirect from="/" to="/home" exact />
+                )}
+
+                {loggedin.val && (
+                    <Route 
+                        exact path="/logout" 
+                        render={() => {
+                            setUser({});
+                            setLoggedIn({val: false});
+                            localStorage.clear();
+                            return  <Route exact path="/login">
+                                        <Login setUser={setUser} />
+                                    </Route>
+                        }} />
+                )}
+
+                {loggedin.val && (
+                    <Route exact path="/about" component={About} />
+                )}
+
+                {loggedin.val && (
+                    <Route exact path="/home"> 
+                        <Home 
+                            items={dbData.items}
+                            isFetching={dbData.isFetching} />
+                    </Route>
+                )} 
+
+                {loggedin.val && (
+                    <Route exact path="/products"> 
+                        <Search 
+                            items={dbData.items}
+                            isFetching={dbData.isFetching} />
+                    </Route>
+                )}         
+            </Switch>
+            <Footer />
+            </>
+        );
+    } else {
 
     return(
         <>
-        <div class="header">
-        <NavBar items={dbData.items}/>
-        </div>
-        <Router>
-        <Switch>
-                <Route exact path="/home"> 
-                    <Home 
-                        items={dbData.items}
-                        isFetching={dbData.isFetching} />
+        {console.log(loggedin.val)}
+        <main> 
+        <Switch> 
+            {!loggedin.val && (
+                <Redirect from="/" to="/login" exact />
+            )}
+
+            {!loggedin.val && (
+                <Redirect from="/home" to="/login" exact />
+            )}
+
+            {!loggedin.val && (
+                <Redirect from="/home" to="/login" exact />
+            )}
+
+            {!loggedin.val && (
+                <Route exact path="/login">
+                    <Login setUser={setUser} />
                 </Route>
-                <Route exact path="/products">
-                    <Search 
-                        items={dbData.items}
-                        isFetching={dbData.isFetching} />
-                </Route>
-                <Route exact path="/about" component={About} />
+            )}
+
+            {!loggedin.val && (
+                <Route exact path="/signup" component={Signup}/>
+            )}
+
+            {!loggedin.val && (
+                <Redirect from="/logout" to="/login" exact />
+            )}        
         </Switch>
-        </Router>
-        <Footer />
+        </main>
         </>
     ) 
+    }
 }
 
 export default App;
