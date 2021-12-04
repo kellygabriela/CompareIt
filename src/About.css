@@ -10,20 +10,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f1f1f1;
+    background-color: #fff;
    
 }
 
 .about-section {
-    margin-top : 10px;
-    margin-bottom: 10px;
+    margin-top : 1%;
+    margin-bottom: 1%;
     background : url(https://freight.cargo.site/t/original/i/a6e19c64065f6dff400cce28f3e6ffe380ea5959f14c6b8515dbf51d67415c62/Widlic_Nike-ASW-4.jpg) no-repeat left;
     background-size: 65%;
     background-color: #fdfdfd;
     overflow: hidden;
-    padding: 100px 30px;
-
-    
+    padding: 7% 3%;  
    
 }
 
@@ -31,8 +29,8 @@ body {
     width: 55%;
     float: right;
     background-color: #fdfdfd;
-    padding: 150px;
-    margin: -60px;
+    padding: 12%;
+    margin: -4.5%;
    
 }
 
@@ -78,6 +76,29 @@ body {
 }
 
 @media only screen and (max-width: 600px){
-   
+    .about-section {
+        background-size: 10%;
+        background-image: none;
+        background-color: #fdfdfd;
+        overflow: hidden;
+        padding: 0 0;  
+       
+    }
+    .inner-container p {
+        width: 100%;
+        float:center;
+        background-color: #fdfdfd;
+        text-align: center;
+        margin-left: -360px;
+       
+    }
+    .inner-container h1 {
+        margin: 10px;
+        font-size: 20px;
+        font-weight:800;
+        margin-left: -200px;
+        
+        
+    }
 
   }
