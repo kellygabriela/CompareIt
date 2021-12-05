@@ -1,6 +1,5 @@
 import { useState, React } from 'react';
 import "./Login.css";
-import text from './component/Text';
 import axios from 'axios';
 
 const Login = ({setUser}) => {
@@ -16,7 +15,6 @@ const Login = ({setUser}) => {
         console.log("sumbit clicked");
         
         if (username === "guest" && password === "guest") {
-            text.value = "Logout";
             setPassword(password);
             setUsername(username);
             console.log(" ");
@@ -51,13 +49,6 @@ const Login = ({setUser}) => {
         document.querySelector( "form" ).reportValidity();
         document.getElementById("login-form").reset();
     }
-
-    const handleLogout = () => {
-        setUser({});
-        setUsername("");
-        setPassword("");
-        localStorage.clear();
-    };
 
     //render() {
         return (

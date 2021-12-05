@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./App.css";
-import {Link, Redirect} from "react-router-dom";
-import text from './Text';
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     const [texts, setTexts] = useState("");
