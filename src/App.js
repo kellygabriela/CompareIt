@@ -45,6 +45,7 @@ function App() {
     if(loggedin.val) {
         return(
             <>
+            <div class="page">
             <NavBar />
             <Switch>
                 {loggedin.val && (
@@ -89,6 +90,7 @@ function App() {
                 )}         
             </Switch>
             <Footer />
+            </div>
             </>
         );
     } else {

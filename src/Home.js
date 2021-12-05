@@ -10,7 +10,6 @@ const Home = (props) => {
 
     return(
     <>
-     <div class="page"> 
         <div class="home-firstpage"> {/*ini butuh css baru karna sekarang g bisa ikut header */}
             <div class="container">
                 <div class="row">
@@ -101,7 +100,6 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </>
     );
