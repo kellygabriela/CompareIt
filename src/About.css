@@ -84,19 +84,19 @@ body {
         padding: 0 0;  
        
     }
-    .inner-container p {
+  .inner-container p {
         width: 100%;
         float:center;
         background-color: #fdfdfd;
         text-align: center;
-        margin-left: -360px;
+        margin-left: -86%;
        
     }
     .inner-container h1 {
         margin: 10px;
         font-size: 20px;
         font-weight:800;
-        margin-left: -200px;
+        margin-left: -48%;
         
         
     }
