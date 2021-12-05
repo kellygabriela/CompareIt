@@ -82,21 +82,22 @@ body {
         background-color: #fdfdfd;
         overflow: hidden;
         padding: 0 0;  
+        margin-top: 5%;
        
     }
   .inner-container p {
-        width: 100%;
+        width: 250%;
         float:center;
         background-color: #fdfdfd;
         text-align: center;
-        margin-left: -86%;
+        margin-left: -155%;
        
     }
     .inner-container h1 {
         margin: 10px;
         font-size: 20px;
         font-weight:800;
-        margin-left: -48%;
+        margin-left: -60%;
         
         
     }
