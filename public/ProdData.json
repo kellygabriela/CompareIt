@@ -1,33 +1,33 @@
 [
     {   
-        "keyword": "nike airforce 1",
+        "keyword": "airforce 1 shoes nike",
         "title": "Nike Air Force 1 /'07",
         "picture": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSkFNIc8Fb8Kw7HgP9NP2le3-xAk2bv4kDpTfzYGv_3ilDx4aGHU0EpYaqy5ay_rQpZNp2h2MxF-NSedTh0tSQstK5IR0skFoDBOC5vPL36t4rfKsd-o-wIog&usqp=CAE",
         "link": "https://www.kickscrew.com/nike-air-force-1-low-first-use-da8478-100.html",
         "price": "900,000"},
     {
-        "keyword": "nike airforce 1",
+        "keyword": "airforce 1 shoes nike",
         "title": "나이키 에어포스 1/'07",
         "picture": "//thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/1ae3/3954a58535da20bad90791c1b1990b371af0191694facf700f608f5a41d6.jpg",
         "link": "https://www.coupang.com/vp/products/260324798?itemId=814515835&vendorItemId=78468526719&q=airforce+1&itemsCount=36&searchId=e152b7d6cc964b7fab2edfeef299d6e6&rank=1",
         "price": "76,380"
     },
     {
-        "keyword": "nike airforce 1",
+        "keyword": "airforce 1 shoes nike",
         "title": "운동화 신발 에어포스1 로우",
         "picture": "//item.ssgcdn.com/77/21/48/item/1000264482177_i1_232.jpg",
         "link": "http://www.ssg.com/item/itemView.ssg?itemId=1000264482177&siteNo=6004&salestrNo=6005&tlidSrchWd=airforce%201&srchPgNo=1&src_area=ssglist",
         "price": "122,550"
     },
     {
-        "keyword": "nike",
+        "keyword": "nike jordan shoes",
         "title": "Nike Air Jordan 1 Low Usa EU 41 & EU 42 & EU 45 & EU 46",
         "picture": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQGEP250hTF85HFA_d4i-KibxtjuKCW6xd5XOkTtfI7pykt9MgxXJzXTl13uIvS3skHbu0aoFVuvkgn8l_QsbAKiKBWyaIuVHeHcbsYdhCH9Zx0JhoOJkuHTA&usqp=CAE",
         "link": "https://www.istyle.id/Nike-Air-Jordan-1-Low-Usa-EU-41-EU-42-EU-45-EU-46-000000896447.do?gclid=CjwKCAjwzt6LBhBeEiwAbPGOgebWxPDNu6OaRPuK9FMmrZDhMAzn_OxDe0yTQJujslCHqqhdYcHLDhoCJmgQAvD_BwE",
         "price": "180,000"
     },
     {
-        "keyword": "nike",
+        "keyword": "nike shoes",
         "title": "\ub098\uc774\ud0a4 \ucf54\ud2b8\ub85c\uc5842 CQ9246-101",
         "picture": "//thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/rs_quotation_api/kx9may0y/184f680ad0994858b12990cad16a7820.jpg",
         "link": "http://coupang.com/vp/products/5994444060?itemId=10832852968&vendorItemId=78112891573",
@@ -41,7 +41,7 @@
         "price": "196,490"
     },
     {
-        "keyword": "nike",
+        "keyword": "nike shoes",
         "title": "\ub0a8\ub140\uacf5\uc6a9 \ub098\uc774\ud0a4 \ub370\uc774\ube0c\ub808\uc774\ud06c CK2351-101",
         "picture": "//item.ssgcdn.com/40/53/80/item/1000057805340_i1_232.jpg",
         "link": "http://www.ssg.com//item/itemView.ssg?itemId=1000057805340&siteNo=6009&salestrNo=1002&tlidSrchWd=nike&srchPgNo=1&src_area=ssglist",
@@ -81,5 +81,32 @@
         "picture": "//item.ssgcdn.com/94/60/59/item/1000228596094_i1_232.jpg",
         "link": "http://www.ssg.com//item/itemView.ssg?itemId=1000228596094&siteNo=6004&salestrNo=6005&tlidSrchWd=black dress&srchPgNo=1&src_area=ssglist",
         "price": "168,521"
-    }
+    },
+    {
+        "keyword": "samsung z flip",
+        "title": "Samsung Galaxy Z Flip 3 5G 256gb US Unlocked Phantom Black",
+        "picture": "https://serpapi.com/searches/61ab3a5a272aa5a041168198/images/f13d3d36e192c421673d827860920ac1ada84957d007c21214664bae3a393a68.jpeg",
+        "link": "https://www.google.co.kr/shopping/product/7052522496640467987",
+        "price": 649.99,
+        "rating": 4.5,
+        "reviews": 3299
+      },
+      {
+        "keyword":"samsung z flip",
+        "title": "\uc0bc\uc131 \uac24\ub7ed\uc2dc Z\ud50c\ub9bd2 5G F707 256GB \uc0c8\uc81c\ud488 \ubbf8\uac1c\ubd09, \ud654\uc774\ud2b8",
+        "picture": "//thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/7c20/cf5dad518636416dbca0a212038a6c94997319598e26676de7ff5ef1c260.png",
+        "link": "http://coupang.com/vp/products/5973736183?itemId=10736763658&vendorItemId=78971984843",
+        "price": "399,700",
+        "rating": "5.0",
+        "reviews": "8"
+      },
+      {
+        "keyword":"samsung z flip",
+        "title": "\uc0bc\uc131 \uac24\ub7ed\uc2dc Z\ud50c\ub9bd3 256G SM-F711N \uc790\uae09\uc81c\ud3f0 IPX8 \ubc29\uc218\uc9c0\uc6d0 [\ub2f9\uc77c\uc218\ub839\ud0dd\ubc30+\ubcf4\ud638\ud544\ub9844\uc885 \uc99d\uc815]",
+        "picture": "//item.ssgcdn.com/24/70/25/item/1000208257024_i1_232.jpg",
+        "link": "http://www.ssg.com//item/itemView.ssg?itemId=1000208257024&siteNo=7014&salestrNo=6005&tlidSrchWd=samsung z flip&srchPgNo=1&src_area=ssglist",
+        "price": "1,065,900",
+        "rating": "4.94",
+        "reviews": "32"
+      }
 ]
