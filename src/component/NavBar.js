@@ -4,9 +4,9 @@ import {Link} from "react-router-dom";
 
 const NavBar = () => {
     const [texts, setTexts] = useState("");
-    const loggedInUser = (localStorage.getItem("status") !== null);
 
     useEffect(() => {
+        const loggedInUser = (localStorage.getItem("status") !== null);
         if(loggedInUser) { //is not null
             return setTexts("Logout");
         } else {

@@ -21,11 +21,13 @@ function App() {
         }
     }, []);
 
+    console.log(user);
+
     const [dbData, setdbData] = useState({items: [], isFetching: false});
 
     useEffect(() => {
         const loadItems = async () => {    
-                setdbData({items: dbData.items, isFetching: true});
+                setdbData({items: [], isFetching: true});
                 const response = await axios.get('ProdData.json');
                 console.log("fetch response1: ");
                 console.log(response.data);
