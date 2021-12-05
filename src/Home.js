@@ -31,10 +31,6 @@ const Home = (props) => {
             isFetching={props.isFetching}
             />
 
-        {/*featured categories*/}
-        <Featured />
-
-        {/*offer*/}
         <div class= "col-8">
             <h2>OUR BEST ITEM</h2> 
         </div>
