@@ -1,10 +1,11 @@
 import { useState, React } from 'react';
 import "./Login.css";
 import axios from 'axios';
+import db_API from './component/API';
 
 const Login = ({setUser}) => {
-    const [userName, setUsername] = useState("");
-    const [passWord, setPassword] = useState("");
+    //const [username, setUsername] = useState("");
+    //const [password, setPassword] = useState("");
 
     const loginfunction = async e => {
         e.preventDefault();
@@ -15,24 +16,24 @@ const Login = ({setUser}) => {
         console.log("sumbit clicked");
         
         if (username === "guest" && password === "guest") {
-            setPassword(password);
-            setUsername(username);
+            //setPassword(pwd);
+            //setUsername(usern);
             console.log(" ");
             console.log("logged in user");
             console.log("username: "+username);
             console.log("password: "+password);
             //handle submit
-            const c_user = { userName, passWord };
+            const c_user = { username, password };
             // send the username and password to the server
             const response = await axios.post(
-                "https://reqres.in/api/users",
+                db_API,
                 c_user
             );
             // set the state of the user
             setUser(response.data)
             // store the user in localStorage
             localStorage.setItem('user', response.data)
-            console.log("POST response:");
+            console.log("login POST response:");
             console.log(response.data)
             localStorage.setItem('status', "loggedin")
             alert("You have successfully logged in.");

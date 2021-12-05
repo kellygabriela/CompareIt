@@ -17,13 +17,28 @@
     margin: 0 13% 0 13%;
     text-align: center;
   }
+
+  .msg-div {
+    background-color: #fff;
+    border-radius: 30px;
+    z-index: 2;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .loading-msg {
+    color: #111d4a;
+    font-size: small;
+  }
   
   #ItemsList {
     padding-inline-start: 0;
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 20px;
     min-height: 185px;
+    margin-bottom: 30px;
   }
   
   .items {
@@ -66,9 +81,28 @@
     max-width: 150px;
     grid-area: image;
   }
+
+  #button {
+    margin-left: 10px;
+    height: 28px;
+    border-radius: 15px;
+    border: 1px solid #111d4a;
+    width: 70px;
+    font-size: 12px;
+  }
+
+  #button-small {
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #111d4a;
+    width: 40px;
+    font-size: 12px;
+    display: none;
+  }
   
   #searchBar {
-    width: 100%;
+    width: 60%;
     height: 38px;
     border-radius: 15px;
     border: 1px solid #111d4a;
@@ -86,11 +120,20 @@
     position: absolute;
     top: 7px;
     right: 15px;
-  }
+  }                                                                                                                         
 
   @media only screen and (max-width: 600px){
     #searchBar {
       width: 75%;
       align-content: center;
+    }
+
+    #button {
+      display: none;
+    }
+
+    #button-small{
+      display: inline;
+      padding-bottom: 2px;
     }
   }

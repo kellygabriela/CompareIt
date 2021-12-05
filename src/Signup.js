@@ -1,9 +1,13 @@
 import * as React from 'react';
+import axios from 'axios';
 import "./component/App.css";
 import "./Login.css"
+import db_API from './component/API';
 
-class Signup extends React.Component {
-    signupfunction = () => {
+function Signup() {
+    const signupfunction = async e => {
+        
+        e.preventDefault();
         const loginForm = document.getElementById("login-form");
     
         const username = loginForm.username.value;
@@ -32,8 +36,17 @@ class Signup extends React.Component {
             console.log("username: "+username);
             console.log("password: "+password);
             console.log("email: "+email);
+            //handle submit
+            const c_user = { email, password, username };
+            // send the username and password to the server
+            const response = await axios.post(
+                db_API,
+                c_user
+            );
+            console.log("POST response:");
+            console.log(response.data)
             alert("You have successfully register your account.");
-            return this.props.history.push('/login');
+            return window.location.pathname = '/login';
         }
 
         //update warning if any
@@ -41,7 +54,7 @@ class Signup extends React.Component {
         document.getElementById("login-form").reset();
     }
 
-    render() {
+    //render() {
         return (
         <>
         <main id="main-holder">
@@ -51,20 +64,20 @@ class Signup extends React.Component {
                 <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
             </div>
         
-            <form id="login-form">
+            <form id="login-form" onSubmit={signupfunction}>
                 <label>
                     <input type="text" name="email" id="email-field" class="login-form-field" placeholder="email" /> <br/>
                     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" /> <br/>
                     <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" /> <br/>
                     <input type="password" name="retypepassword" id="retypepassword-field" class="login-form-field" placeholder="Confirm Password" /> <br/>
-                    <button type="submit" value="Login" id="login-form-submit" onClick={this.signupfunction}> Sign up </button>
+                    <button type="submit" value="Login" id="login-form-submit"> Sign up </button>
                     <h4 class="loginbtn"><a href="/login"> back to login </a></h4>
                 </label>
             </form>
         </main>
     </>
   );
-    }
+    //}
 }
 
 export default Signup;

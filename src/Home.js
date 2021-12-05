@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./component/App.css";
 import "./OnePic.css";
-import Featured from './component/Featured';
 import ProductList from './ProductList';
 import OnePic from './OnePic';
 import { Link } from 'react-router-dom';

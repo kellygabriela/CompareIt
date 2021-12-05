@@ -1,17 +1,29 @@
-import React from "react";
+import { useState , React } from "react";
 import "./Search.css";
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import db_API from './API';
+import axios from "axios";
 
-const SearchBar = ({ setSearchQuery }) => {
+
+const SearchBar = ({ setSearchQuery, setLoad }) => {
     const [searchInput, setSearchInput] = useState();
     const history = useHistory();
 
-    const onSubmit = (e) => { //return to database
-        console.log(searchInput);
+    const onSubmit = async (e) => { //return to database
+        e.preventDefault(); 
+        console.log("search "+searchInput+"...");
+        const search_query = { searchInput };
+        setLoad({isLoading: true});
+        //send search input
+        const response = await axios.post(
+            db_API,
+            search_query
+        );
+        console.log("search POST response:");
+        console.log(response.data);
+        setLoad({isLoading: false});
         setSearchQuery(searchInput);
         history.push(`?=${searchInput}`);
-        e.preventDefault(); 
     };
 
     return (
@@ -24,7 +36,8 @@ const SearchBar = ({ setSearchQuery }) => {
                 value={searchInput}
                 onInput={(e) => setSearchInput(e.target.value)}
            />
-           <button type="submit">Search</button>
+           <input id="button" type="submit" value="search"></input>
+           <input id="button-small" type="submit" value="🔍"></input>
         </form>
     )
 }

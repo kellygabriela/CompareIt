@@ -45,6 +45,7 @@ const Search = (props) => {
     console.log("dbItems: ");
     console.log(dbItems);
 
+    const [load, setLoad] = useState({isLoading: false});
     const { search } = window.location;
     const query = new URLSearchParams(search).get('searchBar');
     const [searchQuery, setSearchQuery] = useState(query || " ");
@@ -56,7 +57,11 @@ const Search = (props) => {
         <div>
             <SearchBar 
                 setSearchQuery={setSearchQuery}
+                setLoad={setLoad}
             />
+            <div class="msg-div">
+            <p class="loading-msg">{load.isLoading ? 'please wait... grabbing extra minions...' : ''}</p>
+            </div>
             <ul id="ItemsList">
                 {displayItems(filteredItems)}
             </ul>
