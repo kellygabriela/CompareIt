@@ -131,6 +131,11 @@ p{
   background: radial-gradient(#fff,#ffd6d6);
 }
 
+.home-firstpage {
+  background: radial-gradient(#fff,#ffd6d6);
+}
+
+
 .home-firstpage .row{ /*ini turunin tulisan whats on sale ny */
   padding-top: 5%;
   margin: 0 20px;
