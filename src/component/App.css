@@ -9,6 +9,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.page {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 .navbar{
   display: flex;
   align-items: center;
