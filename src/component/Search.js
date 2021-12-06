@@ -62,10 +62,10 @@ const Search = (props) => {
             <div class="msg-div">
             <p class="loading-msg">{load.isLoading ? 'please wait... grabbing extra minions...' : ''}</p>
             </div>
-            <ul id="ItemsList">
-                {displayItems(filteredItems)}
-            </ul>
-        </div>
+                <ul id="ItemsList">
+                    {displayItems(filteredItems)}
+                </ul>
+            </div>
         </Router>
         </div>
     )

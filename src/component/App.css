@@ -99,9 +99,8 @@ p{
   font-size: 4.5em;
   line-height: 60px;
   margin: 25px 0;
-  width: 550px;
+  max-width: 550px;
   font-family: 'Poppins', sans-serif;
-  
 }
 
 .btn{
@@ -146,9 +145,20 @@ p{
 }
 
 .col-3{
-  flex-basis: 32%;
+  flex-basis: 25%;
   margin-bottom: 30px;
   list-style: none;
+}
+
+.col-3 p{
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+
+.col-3 h2{
+  font-size: x-large;
+  min-height: 60px;
 }
 
 .col-3 img{ /*ini biar ada space antara pictures*/
@@ -164,7 +174,7 @@ p{
 }*/
 
 .small-container {
-  margin: 0 5%;
+  margin: 0 10%;
 }
 
 .col-4{
@@ -282,11 +292,7 @@ small{
   font-size: 34px;
   color: #ff523b;
 }
-.col-3 p{
-  font-size: 12px;
-  margin: 12px 0;
-  color: #777;
-}
+
 .testimonial .col-3 h3{
   font-weight: 600;
   color: #555;
@@ -468,6 +474,11 @@ ul{
   .dropdown:hover .dropbtn {
     background-color: #333;
   }
+
+  .col-3 h2{
+    font-size: larger;
+    min-height: 53px;
+  }
 }
 
 /*media query for less than 600 screen size*/
@@ -508,3 +519,4 @@ ul{
     flex-basis: 45%;
   }
 }
+
