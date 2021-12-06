@@ -2,6 +2,7 @@ import { React } from 'react';
 import "./Login.css";
 import axios from 'axios';
 import db_API from './component/API';
+import swal from 'sweetalert';
 
 const Login = ({setUser}) => {
     //const [username, setUsername] = useState("");
@@ -36,8 +37,12 @@ const Login = ({setUser}) => {
             console.log("login POST response:");
             console.log(response.data)
             localStorage.setItem('status', "loggedin")
-            alert("You have successfully logged in.");
-            return window.location.reload();
+            swal("Welcome Back!", "let the minion take your coat. enjoy.", "success", {button: true})
+            .then(() => {
+                window.location.pathname = "/home";
+            })
+        } else if (!username) { 
+            document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
         } else if (username === "guest") { 
             document.querySelector( "#password-field").setCustomValidity( "Password is invalid" );
         } else if (password === "guest") {
@@ -49,6 +54,7 @@ const Login = ({setUser}) => {
         //update warning if any
         document.querySelector( "form" ).reportValidity();
         document.getElementById("login-form").reset();
+        console.log("checked");
     }
 
     //render() {
@@ -61,11 +67,11 @@ const Login = ({setUser}) => {
                 <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
             </div>
         
-            <form id="login-form" onSubmit={loginfunction}>
+            <form id="login-form">
                 <label>
                     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" /> <br/>
                     <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" /> <br/>
-                    <button type="submit" value="Login" id="login-form-submit"> Login </button>
+                    <button type="submit" value="Login" id="login-form-submit" onClick={loginfunction}> Login </button>
                     <h4 class="signupbtn"> Don't have an account? <a href="/signup"> sign up </a></h4>
                 </label>
             </form>

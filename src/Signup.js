@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./component/App.css";
 import "./Login.css"
 import db_API from './component/API';
+import swal from 'sweetalert';
 
 function Signup() {
     const signupfunction = async e => {
@@ -45,8 +46,10 @@ function Signup() {
             );
             console.log("POST response:");
             console.log(response.data)
-            alert("You have successfully register your account.");
-            return window.location.pathname = '/login';
+            swal("You're now registered", "Tell the minion your name. they'll let you in.", "success", {button: true})
+            .then(() => {
+                window.location.pathname = "/login";
+            })
         }
 
         //update warning if any
