@@ -25,11 +25,13 @@ const Home = (props) => {
         </div>
         
         {/*sliced from product page*/}
+    <div class= "col-18">
+            <h1>Featured Items </h1>
         <ProductList 
             items={props.items}
             isFetching={props.isFetching}
             />
-
+        </div>
 
         {/*offer*/}
         <div class= "col-8">
