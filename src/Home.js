@@ -49,7 +49,7 @@ const Home = (props) => {
         </div>
         
 
-        {/*ni buat orang2 testi stuff kalo gamau jg gpp*/} 
+        {/*ni buat orang2 testi stuff kalo gamau jg gpp
         <div class="testimonial">
             <div class="small-container">
                 <div class="row">
@@ -76,7 +76,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */} 
 
         {/*ini buat brands ny*/} 
         <div class="brands">

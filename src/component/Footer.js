@@ -9,8 +9,8 @@ class Footer extends React.Component{
                 <div class="container">
                     <div class="row">
                         <div class="footer-col-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Fila_logo.svg/2560px-Fila_logo.svg.png" alt=" "/> {/*harusnya logo compare it*/}
-                            <p>insert kata kata disini tolong insert apapun insert kata kata disini </p>
+                            <img src="https://cdn.discordapp.com/attachments/886619396087349288/917301756260675624/C.png" alt=" "/> {/*harusnya logo compare it*/}
+                            <p>CIDT Production</p>
                         </div>
                         <div class="footer-col-4">
                             <h3>Follow us</h3>
