@@ -16,7 +16,7 @@ const displayItems = (items) => {
                     <li class="items">
                         <h2>{item.title}</h2>
                         <h4>Price: {item.price}</h4>
-                        <a href={item.link} class="btn">Shop</a>
+                        <a href={item.link} class="btn" target="_blank">Shop</a>
                         <img src={item.picture} alt=" "></img>
                     </li>
             ))}

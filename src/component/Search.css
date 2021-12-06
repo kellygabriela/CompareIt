@@ -61,6 +61,8 @@
     grid-area: product;
     margin-bottom: 0px;
     padding-top: 8px;
+    font-size: 22px;
+    max-width: 80%;
   }
   
   .items > h4 {
@@ -126,6 +128,20 @@
     #searchBar {
       width: 75%;
       align-content: center;
+    }
+
+    .items > h2 {
+      font-size: large;
+    }
+
+    .items > h4 {
+      font-size: small;
+    }
+
+    .items > a {
+      font-size: small;
+      height: 30px;
+      width: 90px;
     }
 
     #button {

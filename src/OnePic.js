@@ -11,7 +11,7 @@ const OnePic = (props) => {
                         <h2>{item.title}</h2>
                         <img src={item.picture} alt=" "></img>
                         <h4><br/>Price: {item.price}</h4>
-                        <a href={item.link} class="btn">Shop</a>
+                        <a href={item.link} class="btn" target="_blank">Shop</a>
                     </li>
             ))}
             {console.log("onepic printed")}
