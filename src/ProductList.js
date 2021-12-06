@@ -9,7 +9,7 @@ const ProductList = (props) => {
     <div class="small-container">
         <div class="row">
         {data
-        .slice(0, 3).map(item => (
+        .slice(0, 6).map(item => (
                 <li class="col-3">
                     <img src={item.picture} alt=" "></img>
                     <h2>{item.title}</h2>
