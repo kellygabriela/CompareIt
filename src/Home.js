@@ -86,13 +86,13 @@ const Home = (props) => {
                         <img src="https://i.pinimg.com/originals/57/2c/7e/572c7e441817edf2fcd4688ff1261214.png"width = "200px" alt=" "/>
                     </div>
                     <div class="col-5">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Fila_logo.svg/2560px-Fila_logo.svg.png"width = "200px" alt=" "/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Coupang_logo.png"width = "200px" alt=" "/>
                     </div>
                     <div class="col-5">
                         <img src="https://cdn.britannica.com/94/193794-050-0FB7060D/Adidas-logo.jpg"width = "200px" alt=" "/>
                     </div>
                     <div class="col-5">
-                        <img src="https://logos-world.net/wp-content/uploads/2020/06/Converse-Logo-2003-2007.png"width = "200px" alt=" "/>
+                        <img src="https://play-lh.googleusercontent.com/U4fk5FzvwR4bPYWeTPmYX_Lpm3ANMHTcMEQ9qbrWO-qucIPPA9olM1bIiAmdZLpEIPMg"width = "200px" alt=" "/>
                     </div>
                     <div class="col-5">
                         <img src="https://i.pinimg.com/originals/57/2c/7e/572c7e441817edf2fcd4688ff1261214.png"width = "200px" alt=" "/>
