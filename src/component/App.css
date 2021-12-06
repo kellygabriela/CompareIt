@@ -173,6 +173,24 @@ p{
   background-color: #000;
 }*/
 
+.col-18{
+  text-align: center;
+  padding-top: 5%;
+}
+
+.col-18:after{ 
+  content: '';
+  background: #ff523b;
+  width: 231px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -10.8%;
+}
+
 .small-container {
   margin: 0 10%;
 }
@@ -517,6 +535,10 @@ ul{
   
   .col-3, .col-4 {
     flex-basis: 45%;
+  }
+  
+  .col-18:after{
+    margin-bottom: 1%;
   }
 }
 

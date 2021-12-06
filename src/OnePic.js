@@ -6,7 +6,7 @@ const OnePic = (props) => {
     return (
         <>
             {data
-            .slice(5, 6).map(item => (
+            .slice(11, 12).map(item => (
                     <li class="grid">
                         <h2>{item.title}</h2>
                         <img src={item.picture} alt=" "></img>
