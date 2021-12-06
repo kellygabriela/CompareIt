@@ -95,7 +95,7 @@ const Home = (props) => {
                         <img src="https://play-lh.googleusercontent.com/U4fk5FzvwR4bPYWeTPmYX_Lpm3ANMHTcMEQ9qbrWO-qucIPPA9olM1bIiAmdZLpEIPMg"width = "200px" alt=" "/>
                     </div>
                     <div class="col-5">
-                        <img src="https://i.pinimg.com/originals/57/2c/7e/572c7e441817edf2fcd4688ff1261214.png"width = "200px" alt=" "/>
+                        <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"width = "200px" alt=" "/>
                     </div>
                 </div>
             </div>
