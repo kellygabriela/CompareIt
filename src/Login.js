@@ -1,12 +1,21 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import "./Login.css";
 import axios from 'axios';
 import db_API from './component/API';
 import swal from 'sweetalert';
 
-const Login = ({setUser}) => {
+const Login = () => {
     //const [username, setUsername] = useState("");
     //const [password, setPassword] = useState("");
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        //localStorage.clear()
+        const loggedInUser = localStorage.getItem("user_su");
+        if (loggedInUser) {
+            setUser(JSON.parse(loggedInUser));
+        }
+    }, []);
 
     const loginfunction = async e => {
         e.preventDefault();
@@ -16,7 +25,7 @@ const Login = ({setUser}) => {
         const password = loginForm.password.value;
         console.log("sumbit clicked");
         
-        if (username === "guest" && password === "guest") {
+        if (username === user.username && password === user.password) {
             //setPassword(pwd);
             //setUsername(usern);
             console.log(" ");
@@ -30,10 +39,6 @@ const Login = ({setUser}) => {
                 db_API,
                 c_user
             );
-            // set the state of the user
-            setUser(response.data)
-            // store the user in localStorage
-            localStorage.setItem('user', response.data)
             console.log("login POST response:");
             console.log(response.data)
             localStorage.setItem('status', "loggedin")
@@ -43,9 +48,9 @@ const Login = ({setUser}) => {
             })
         } else if (!username) { 
             document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
-        } else if (username === "guest") { 
+        } else if (username === user.username) { 
             document.querySelector( "#password-field").setCustomValidity( "Password is invalid" );
-        } else if (password === "guest") {
+        } else if (password === user.password) {
             document.querySelector( "#username-field" ).setCustomValidity( "Username is invalid" );
         } else {
             document.querySelector( "button" ).setCustomValidity( "Username and or password is invalid" );

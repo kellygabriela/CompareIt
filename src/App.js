@@ -11,18 +11,6 @@ import Login from './Login';
 import Signup from './Signup';
 
 function App() {
-    const [user, setUser] = useState();
-
-    useEffect(() => {
-        //localStorage.clear()
-        const loggedInUser = localStorage.getItem("user");
-        if (loggedInUser) {
-            setUser(loggedInUser);
-        }
-    }, []);
-
-    console.log(user);
-
     const [dbData, setdbData] = useState({items: [], isFetching: false});
 
     useEffect(() => {
@@ -62,11 +50,11 @@ function App() {
                     <Route 
                         exact path="/logout" 
                         render={() => {
-                            setUser({});
                             setLoggedIn({val: false});
-                            localStorage.clear();
+                            localStorage.removeItem('user');
+                            localStorage.removeItem('status');
                             return  <Route exact path="/login">
-                                        <Login setUser={setUser} />
+                                        <Login />
                                     </Route>
                         }} />
                 )}
@@ -116,7 +104,7 @@ function App() {
 
             {!loggedin.val && (
                 <Route exact path="/login">
-                    <Login setUser={setUser} />
+                    <Login />
                 </Route>
             )}
 

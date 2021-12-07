@@ -1,0 +1,39 @@
+compareit-app
+├── build
+├── node_modules
+├── public
+│   ├── index.html
+│   ├── manifest.json
+│   ├── phone-menu-icon-navbar.png
+│   └── robots.txt
+├── src
+│   ├── component
+│   │   ├── js 
+│   │   │   ├── API.js
+│   │   │   ├── Footer.js
+│   │   │   ├── NavBar.js
+│   │   │   ├── OnePic.js
+│   │   │   ├── ProdList.js
+│   │   │   └── SearchBar.js
+│   │   └── css
+│   │       ├── Search.css
+│   │       ├── App.css
+│   │       ├── About.css
+│   │       ├── Login.css
+│   │       └── OnePic.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── Login.js
+│   ├── Signup.js
+│   ├── Home.js
+│   ├── Search.js
+│   ├── About.js
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── README.md
+├── package-lock.json
+├── package.json
+└── README.md

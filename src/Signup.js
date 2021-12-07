@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./component/App.css";
 import "./Login.css"
@@ -6,6 +7,16 @@ import db_API from './component/API';
 import swal from 'sweetalert';
 
 function Signup() {
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        //localStorage.clear()
+        const loggedInUser = localStorage.getItem("user_su");
+        if (loggedInUser) {
+            setUser(JSON.parse(loggedInUser));
+        }
+    }, []);
+
     const signupfunction = async e => {
         
         e.preventDefault();
@@ -17,11 +28,11 @@ function Signup() {
         const retypepassword = loginForm.retypepassword.value;
 
         
-        if( email === "guest@example.com") {
+        if( email === user.email) {
             document.querySelector( "#email-field").setCustomValidity( "This email is already registered" );
         } else if( !email ) {
             document.querySelector( "#email-field").setCustomValidity( "Please fill in this field" );
-        } else if (username === "guest") { 
+        } else if (username === user.username) { 
             document.querySelector( "#username-field").setCustomValidity( "This username is already registered" );
         } else if (!username) {
             document.querySelector( "#username-field").setCustomValidity( "Please fill in this field" );
@@ -44,6 +55,7 @@ function Signup() {
                 db_API,
                 c_user
             );
+            localStorage.setItem('user_su', JSON.stringify(response.data));
             console.log("POST response:");
             console.log(response.data)
             swal("You're now registered", "Tell the minion your name. they'll let you in.", "success", {button: true})
@@ -60,6 +72,7 @@ function Signup() {
     //render() {
         return (
         <>
+        <div class="cont">
         <main id="main-holder">
             <h1 id="login-header">Signup</h1>
 
@@ -78,6 +91,7 @@ function Signup() {
                 </label>
             </form>
         </main>
+        </div>
     </>
   );
     //}

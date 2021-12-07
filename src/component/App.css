@@ -178,19 +178,6 @@ p{
   padding-top: 5%;
 }
 
-.col-18:after{ 
-  content: '';
-  background: #ff523b;
-  width: 231px;
-  height: 5px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: -5%;
-}
-
 .small-container {
   margin: 0 10%;
 }
@@ -214,6 +201,7 @@ p{
   line-height: 60px;
   color: #555;
 }
+
 .title::after{ /*ini merah di bawah featured product gausa jg gpp*/
   content: '';
   background: #ff523b;
@@ -225,6 +213,7 @@ p{
   left: 50%;
   transform: translateX(-50%);
 }
+
 .productTitle{ /*ni baru buat product page ny*/
   text-align: center;
   margin: 0 auto 80px;

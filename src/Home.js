@@ -26,7 +26,7 @@ const Home = (props) => {
         
         {/*sliced from product page*/}
     <div class= "col-18">
-            <h1>Featured Items </h1>
+            <h1 class="title">Featured Items </h1>
         <ProductList 
             items={props.items}
             isFetching={props.isFetching}
@@ -35,7 +35,7 @@ const Home = (props) => {
 
         {/*offer*/}
         <div class= "col-8">
-            <h2>OUR BEST ITEM</h2> 
+            <h1 class="title">OUR BEST ITEM</h1> 
         </div>
         <div class="offer">
             <div class="small-container">
