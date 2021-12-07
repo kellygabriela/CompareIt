@@ -60,6 +60,7 @@ const Login = ({setUser}) => {
     //render() {
         return (
         <>
+        <div class="cont">
         <main id="main-holder">
             <h1 id="login-header">Login</h1>
 
@@ -76,6 +77,7 @@ const Login = ({setUser}) => {
                 </label>
             </form>
         </main>
+        </div>
     </>
   );
     //}

@@ -5,10 +5,15 @@ html {
 body {
   height: 100%;
   margin: 0;
+  display: grid;
   font-family: Arial, Helvetica, sans-serif;
   justify-items: center;
   align-items: center;
-  margin-left: -10%;
+}
+
+.cont {
+  margin-left: -20%;
+  margin-right: 20%;
 }
 
 #main-holder {
@@ -16,6 +21,7 @@ body {
   height: 150%;
   display: grid;
   justify-items: center;
+  align-items: center;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0px 0px 5px 2px black;
@@ -86,7 +92,8 @@ body {
 }
 
 @media only screen and (max-width: 600px){
-  body {
+  .cont {
     margin-left: -20%;
+    margin-right: 20%;
   }
 }
