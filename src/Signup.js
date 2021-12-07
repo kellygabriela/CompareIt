@@ -7,15 +7,47 @@ import db_API from './component/API';
 import swal from 'sweetalert';
 
 function Signup() {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         //localStorage.clear()
-        const loggedInUser = localStorage.getItem("user_su");
+        const existingUsers = localStorage.getItem('users')
+        setUsers(existingUsers ? JSON.parse(existingUsers) : [])
+
+        console.log("users: " + localStorage.getItem('users'))
+
+        const loggedInUser = localStorage.getItem("users");
         if (loggedInUser) {
             setUser(JSON.parse(loggedInUser));
         }
+        console.log("user:" + user);
     }, []);
+
+    const filterUser = (user, username) => { 
+        let temp = false;
+
+        user.filter(item => {
+            console.log("search username: "+ username);
+            const searchedItem = item.username.includes(username);
+            if(searchedItem) {
+                let temp = true
+            }
+        })
+        return temp
+    }
+
+    const filterMail = (user, email) => {
+        let temp = false;
+        user.filter(item => {
+            console.log("search username: "+ email);
+            const searchedItem = item.email.includes(email);
+            if(searchedItem) {
+                let temp = true
+            }
+        })
+        return temp
+    }
 
     const signupfunction = async e => {
         
@@ -27,41 +59,48 @@ function Signup() {
         const email = loginForm.email.value;
         const retypepassword = loginForm.retypepassword.value;
 
-        
-        if( email === user.email) {
-            document.querySelector( "#email-field").setCustomValidity( "This email is already registered" );
-        } else if( !email ) {
+        if( !email ) {
             document.querySelector( "#email-field").setCustomValidity( "Please fill in this field" );
-        } else if (username === user.username) { 
-            document.querySelector( "#username-field").setCustomValidity( "This username is already registered" );
         } else if (!username) {
             document.querySelector( "#username-field").setCustomValidity( "Please fill in this field" );
         } else if( !password) {
             document.querySelector( "#password-field").setCustomValidity( "Please fill in this field" );
-        } else if (password.length < 8) {
-            document.querySelector( "#password-field").setCustomValidity( "Password length must be atleast 8 characters" );
-        } else if (retypepassword !== password) {
-            document.querySelector( "#retypepassword-field").setCustomValidity( "Password is not the same" );        
-        }else {
-            console.log(" ");
-            console.log("signed in user");
-            console.log("username: "+username);
-            console.log("password: "+password);
-            console.log("email: "+email);
-            //handle submit
-            const c_user = { email, password, username };
-            // send the username and password to the server
-            const response = await axios.post(
-                db_API,
-                c_user
-            );
-            localStorage.setItem('user_su', JSON.stringify(response.data));
-            console.log("POST response:");
-            console.log(response.data)
-            swal("You're now registered", "Tell the minion your name. they'll let you in.", "success", {button: true})
-            .then(() => {
-                window.location.pathname = "/login";
-            })
+        } else {
+            let founduser = filterUser(user, username);
+            let foundmail = filterMail(user, email);
+
+            if(foundmail) {
+                document.querySelector( "#email-field").setCustomValidity( "This email is already registered" );
+            } else if (founduser) { 
+                document.querySelector( "#username-field").setCustomValidity( "This username is already registered" );
+            } else if (password.length < 8) {
+                document.querySelector( "#password-field").setCustomValidity( "Password length must be atleast 8 characters" );
+            } else if (retypepassword !== password) {
+                document.querySelector( "#retypepassword-field").setCustomValidity( "Password is not the same" );        
+            }else {
+                console.log(" ");
+                console.log("signed in user");
+                console.log("username: "+username);
+                console.log("password: "+password);
+                console.log("email: "+email);
+                //handle submit
+                const c_user = { email, password, username };
+                // send the username and password to the server
+                const response = await axios.post(
+                    db_API,
+                    c_user
+                );
+                const next = [...users, c_user]
+                console.log("next users: " + next)
+                setUsers(next)
+                localStorage.setItem('users', JSON.stringify(next))
+                console.log("POST response:");
+                console.log(response.data)
+                swal("You're now registered", "Tell the minion your name. they'll let you in.", "success", {button: true})
+                .then(() => {
+                    window.location.pathname = "/login";
+                })
+            }
         }
 
         //update warning if any
