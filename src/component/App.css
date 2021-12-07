@@ -188,7 +188,7 @@ p{
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: -10.8%;
+  margin-bottom: -5%;
 }
 
 .small-container {
@@ -538,7 +538,7 @@ ul{
   }
   
   .col-18:after{
-    margin-bottom: 1%;
+    margin-bottom: 37%;
   }
 }
 
