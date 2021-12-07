@@ -75,7 +75,8 @@ function App() {
                     <Route exact path="/products"> 
                         <Search 
                             items={dbData.items}
-                            isFetching={dbData.isFetching} />
+                            isFetching={dbData.isFetching}
+                            />
                     </Route>
                 )}         
             </Switch>

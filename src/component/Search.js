@@ -26,10 +26,14 @@ const displayItems = (items) => {
 };
 
 //filter items based on searchBar input (query)
-const filterItems = (dbItems, query) => {
+const filterItems = (dbItems, dataFromCrawler, cr_ex, query) => {
     console.log("query = "+!query)
     if(!query){
         return dbItems;
+    }
+
+    if(cr_ex) {
+        return dataFromCrawler;
     }
 
     return dbItems.filter((item) => {
@@ -44,12 +48,12 @@ const Search = (props) => {
     dbItems = props.items;
     console.log("dbItems: ");
     console.log(dbItems);
-
+    const [dataFromCrawler, setDataFromCrawler] = useState({items: [], exist: false});
     const [load, setLoad] = useState({isLoading: false});
     const { search } = window.location;
     const query = new URLSearchParams(search).get('searchBar');
     const [searchQuery, setSearchQuery] = useState(query || " ");
-    const filteredItems = filterItems(dbItems, searchQuery);
+    const filteredItems = filterItems(dbItems, dataFromCrawler.items, dataFromCrawler.exist, searchQuery);
 
     return(
         <div class="container-s">
@@ -58,6 +62,7 @@ const Search = (props) => {
             <SearchBar 
                 setSearchQuery={setSearchQuery}
                 setLoad={setLoad}
+                setDataFromCrawler={setDataFromCrawler}
             />
             <div class="msg-div">
             <p class="loading-msg">{load.isLoading ? 'please wait... grabbing extra minions...' : ''}</p>

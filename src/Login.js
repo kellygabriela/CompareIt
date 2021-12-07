@@ -8,6 +8,7 @@ const Login = () => {
     const [user, setUser] = useState([]);
 
     useEffect(() => {
+        //localStorage.clear();
         const loggedInUser = localStorage.getItem("users");
         if (loggedInUser) {
             setUser(JSON.parse(loggedInUser));
@@ -46,11 +47,15 @@ const Login = () => {
 
         if(!username || (user.length === 0)) {
             document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
+            document.querySelector( "form" ).reportValidity();
+            document.getElementById("login-form").reset();
         } else {
             let founduser = filterUser(user, username);
             console.log(founduser);
             if(!founduser) {
                 document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
+                document.querySelector( "form" ).reportValidity();
+                document.getElementById("login-form").reset();
             }
             if (username === founduser.username && password === founduser.password) {
                 //setPassword(pwd);

@@ -5,7 +5,7 @@ import db_API from './API';
 import axios from "axios";
 
 
-const SearchBar = ({ setSearchQuery, setLoad }) => {
+const SearchBar = ({ setSearchQuery, setLoad, setDataFromCrawler }) => {
     const [searchInput, setSearchInput] = useState();
     const history = useHistory();
 
@@ -14,15 +14,17 @@ const SearchBar = ({ setSearchQuery, setLoad }) => {
         console.log("search "+searchInput+"...");
         const search_query = { searchInput };
         setLoad({isLoading: true});
+
         //send search input
-        const response = await axios.post(
-            db_API,
-            search_query
-        );
+        const response = await axios.get('ProdData.json');
         console.log("search POST response:");
         console.log(response.data);
+        setDataFromCrawler({items: response.data, exist: true});
+
         setLoad({isLoading: false});
+        console.log("is here");
         setSearchQuery(searchInput);
+
         history.push(`?=${searchInput}`);
     };
 
