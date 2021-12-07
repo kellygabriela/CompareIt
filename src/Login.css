@@ -6,9 +6,9 @@ body {
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  display: grid;
   justify-items: center;
   align-items: center;
+  margin-left: -10%;
 }
 
 #main-holder {
@@ -16,7 +16,6 @@ body {
   height: 150%;
   display: grid;
   justify-items: center;
-  align-items: center;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0px 0px 5px 2px black;
@@ -84,4 +83,10 @@ body {
   cursor: pointer;
   outline: none;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px){
+  body {
+    margin-left: -20%;
+  }
 }
