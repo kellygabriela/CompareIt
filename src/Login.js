@@ -39,6 +39,10 @@ const Login = () => {
 
     const loginfunction = async e => {
         e.preventDefault();
+        document.querySelector( "#username-field" ).setCustomValidity( '' );
+        document.querySelector( "#password-field").setCustomValidity( '' );
+        document.querySelector( "button" ).setCustomValidity( '' );
+        let error_val = "";
         const loginForm = document.getElementById("login-form");
         
         const username = loginForm.username.value;
@@ -47,15 +51,12 @@ const Login = () => {
 
         if(!username || (user.length === 0)) {
             document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
-            document.querySelector( "form" ).reportValidity();
-            document.getElementById("login-form").reset();
+
         } else {
             let founduser = filterUser(user, username);
             console.log(founduser);
             if(!founduser) {
                 document.querySelector( "#username-field").setCustomValidity( "Username is invalid" );
-                document.querySelector( "form" ).reportValidity();
-                document.getElementById("login-form").reset();
             }
             if (username === founduser.username && password === founduser.password) {
                 //setPassword(pwd);
@@ -64,15 +65,8 @@ const Login = () => {
                 console.log("logged in user");
                 console.log("username: "+username);
                 console.log("password: "+password);
+
                 //handle submit
-                const c_user = { username, password };
-                // send the username and password to the server
-                const response = await axios.post(
-                    db_API,
-                    c_user
-                );
-                console.log("login POST response:");
-                console.log(response.data)
                 localStorage.setItem('status', "loggedin")
                 swal("Welcome Back!", "let the minion take your coat. enjoy.", "success", {button: true})
                 .then(() => {
@@ -89,7 +83,7 @@ const Login = () => {
 
         //update warning if any
         document.querySelector( "form" ).reportValidity();
-        document.getElementById("login-form").reset();
+        document.querySelector( "form" ).reset();
         console.log("checked");
     }
 

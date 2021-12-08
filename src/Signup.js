@@ -50,8 +50,11 @@ function Signup() {
     }
 
     const signupfunction = async e => {
-        
         e.preventDefault();
+        document.querySelector( "#username-field" ).setCustomValidity( '' );
+        document.querySelector( "#password-field").setCustomValidity( '' );
+        document.querySelector( "#retypepassword-field").setCustomValidity( '' );        
+        document.querySelector( "#email-field").setCustomValidity( '' );
         const loginForm = document.getElementById("login-form");
     
         const username = loginForm.username.value;
@@ -83,19 +86,14 @@ function Signup() {
                 console.log("username: "+username);
                 console.log("password: "+password);
                 console.log("email: "+email);
+
                 //handle submit
                 const c_user = { email, password, username };
-                // send the username and password to the server
-                const response = await axios.post(
-                    db_API,
-                    c_user
-                );
                 const next = [...users, c_user]
                 console.log("next users: " + next)
                 setUsers(next)
                 localStorage.setItem('users', JSON.stringify(next))
-                console.log("POST response:");
-                console.log(response.data)
+
                 swal("You're now registered", "Tell the minion your name. they'll let you in.", "success", {button: true})
                 .then(() => {
                     window.location.pathname = "/login";
@@ -121,7 +119,7 @@ function Signup() {
         
             <form id="login-form" onSubmit={signupfunction}>
                 <label>
-                    <input type="text" name="email" id="email-field" class="login-form-field" placeholder="email" /> <br/>
+                    <input type="email" name="email" id="email-field" class="login-form-field" placeholder="email" /> <br/>
                     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" /> <br/>
                     <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" /> <br/>
                     <input type="password" name="retypepassword" id="retypepassword-field" class="login-form-field" placeholder="Confirm Password" /> <br/>
